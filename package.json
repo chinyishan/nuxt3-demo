@@ -1,6 +1,9 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "overrides": {
+    "vue": "latest"
+  },
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -10,6 +13,12 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
-    "nuxt": "^3.7.1"
+    "nuxt": "^3.7.1",
+    "sass": "^1.62.0",
+    "sass-loader": "^13.2.2"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "pinia": "^2.1.6"
   }
 }

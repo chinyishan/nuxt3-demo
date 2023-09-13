@@ -1,7 +1,12 @@
-<template lang="">
+<template>
   <div>
-    <h1>首頁</h1>
+    <h1 class="title">首頁</h1>
   </div>
 </template>
-
-<script lang="ts" setup></script>
+<script setup>
+// definePageMeta({
+//   pageTransition: {
+//     name: 'rotate'
+//   }
+// })
+</script>

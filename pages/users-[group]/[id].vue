@@ -4,6 +4,15 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+const route = useRoute();
+
+useSeoMeta({
+  title: () => `${route.params.group}-${route.params.id}`,
+  description: () => `${route.params.id} - meta tag 設定`,
+  ogTitle: () => `${route.params.group}-${route.params.id}`,
+  ogDescription: () => `${route.params.id} - meta tag 設定`,
+});
+</script>
 
 <style></style>

@@ -1,21 +1,30 @@
 <template>
   <div>
     <h1>關於我們</h1>
-    <Button @click="data.add" />
-    <h2>{{ data.count }}</h2>
+    <div class="box">
+      <Button @click="dataCount.add" />
+      <h2>{{ dataCount.count }}</h2>
+    </div>
+    {{ data }}
   </div>
 </template>
 
 <script setup>
-const data = useAddCount();
+import axios from "axios";
 
-const res = await useFetch("https://vue-lessons-api.vercel.app/seo/about");
-useServerSeoMeta({
-  title: () => `${res.data.value.title} - Nuxt3`,
-  ogTitle: () => `${res.data.value.title} - Nuxt3`,
-  description: () => `${res.data.value.description} - Nuxt3`,
-  ogDescription: () => `${res.data.value.description} - Nuxt3`,
+const { data } = await useAsyncData("banner", async () => {
+  const res = await axios.get("https://api.github.com/orgs/nuxt");
+  return res.data;
 });
+
+useServerSeoMeta({
+  title: () => `${data.value.name}-標題`,
+  ogTitle: () => `${data.value.name}-標題`,
+  description: () => `${data.value.description}-網頁說明`,
+  ogDescription: () => `${data.value.description}-網頁說明`,
+});
+
+const dataCount = useAddCount();
 
 //單一頁面引入
 useHead({
@@ -34,3 +43,9 @@ useHead({
   ],
 });
 </script>
+
+<style lang="scss" scoped>
+.box {
+  text-align: center;
+}
+</style>

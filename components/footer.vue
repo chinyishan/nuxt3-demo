@@ -1,17 +1,16 @@
 <template>
   <div>
-    <h1>Footer</h1>
+    <h2>Footer</h2>
   </div>
 </template>
-<style scoped>
-h1 {
+<style lang="scss" scoped>
+h2 {
   width: 100%;
   height: 5%;
   color: #848484;
   background-color: #dadada;
-  position: fixed;
-  bottom: 0;
-  left: 0;
+  padding: 20px 0;
+  margin-top: 40px;
   font-size: 16px;
   text-align: center;
 }

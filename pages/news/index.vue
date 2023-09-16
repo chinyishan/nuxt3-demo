@@ -1,29 +1,22 @@
 <template>
   <div>
-    <Head>
-      <!-- <Title>{{ title }}</Title> -->
-      <!-- <Meta name="description" :content="title" /> -->
-      <!-- <Style
-        type="text/css"
-        children="body { background-color: #ebebeb; }"
-      ></Style> -->
-    </Head>
-    <h1>商品頁</h1>
+    <h1>最新消息</h1>
   </div>
 </template>
 
 <script setup>
-// const title = ref("Hello Product");
+// const getData = () =>
+//   new Promise((resolve) => setTimeout(() => resolve("data"), 1000));
 
-// setTimeout(() => {
-//   console.log(0);
-//   useServerSeoMeta({
-//     title: "Product",
-//     description: "商品 - meta tag 設定",
-//     ogTitle: "Product",
-//     ogDescription: "商品 - meta tag 設定",
-//   });
-// }, 500);
+// async函数会被编译成generator函数 (babel会编译成更本质的形态，这里我们直接用generator)
+// function testG() {
+//   // await被编译成了yield
+//   const data = yield getData();
+//   console.log("data: ", data);
+//   const data2 = yield getData();
+//   console.log("data2: ", data2);
+//   return "success";
+// }
 
 // function timeout() {
 //   return new Promise((resolve) =>
@@ -80,19 +73,19 @@
 
 // doStuffAsync();
 
-async function cc() {
-  setTimeout(() => {
-    console.log(0);
-    useServerSeoMeta({
-      title: "Product",
-      description: "商品 - meta tag 設定",
-      ogTitle: "Product",
-      ogDescription: "商品 - meta tag 設定",
-    });
-  }, 500);
-}
+// async function cc() {
+//   setTimeout(() => {
+//     console.log(0);
+//     useServerSeoMeta({
+//       title: "Product",
+//       description: "商品 - meta tag 設定",
+//       ogTitle: "Product",
+//       ogDescription: "商品 - meta tag 設定",
+//     });
+//   }, 500);
+// }
 
-await cc();
+// await cc();
 
-console.log(1);
+console.log(2);
 </script>

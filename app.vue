@@ -12,9 +12,18 @@
   margin: 0;
   padding: 0;
 }
-
-body {
-  height: 1000px;
+h1 {
+  text-align: center;
+  padding: 20px;
+}
+img {
+  display: block;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+}
+a {
+  display: block;
 }
 
 .page-enter-active,

@@ -5,6 +5,7 @@
       <Button @click="dataCount.add" />
       <h2>{{ dataCount.count }}</h2>
     </div>
+    {{ data }}
   </div>
 </template>
 
@@ -21,6 +22,7 @@ useServerSeoMeta({
   ogTitle: () => `${data.value.name}-標題`,
   description: () => `${data.value.description}-網頁說明`,
   ogDescription: () => `${data.value.description}-網頁說明`,
+  ogImage: () => `${data.value.avatar_url}`,
 });
 
 const dataCount = useAddCount();

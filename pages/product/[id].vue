@@ -34,6 +34,7 @@ useSeoMeta({
   ogTitle: () => `商品-${data.value.title}`,
   description: () => `網頁說明-${data.value.description}`,
   ogDescription: () => `網頁說明-${data.value.description}`,
+  ogImage: () => `${data.value.thumbnail}`,
 });
 </script>
 
@@ -58,7 +59,6 @@ useSeoMeta({
         object-position: center;
       }
     }
-
     &:nth-child(1) {
       width: 55%;
     }
@@ -82,6 +82,19 @@ useSeoMeta({
         text-align: right;
         color: rgb(255, 27, 80);
         font-size: 28px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .product_row {
+    flex-wrap: wrap;
+    .product_col {
+      &:nth-child(1) {
+        width: 100%;
+      }
+      &:nth-child(2) {
+        width: 100%;
       }
     }
   }

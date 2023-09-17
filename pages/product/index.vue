@@ -45,13 +45,12 @@ useSeoMeta({
   justify-content: center;
   flex-wrap: wrap;
   flex-grow: 1;
-  width: min(1200px, 93%);
+  width: min(1200px, 94%);
   margin: 0 auto;
 
   .shop_col {
     display: flex;
     flex-direction: column;
-    // flex-grow: 1;
     width: 24%;
     padding: 15px;
     margin: 10px;
@@ -80,6 +79,14 @@ useSeoMeta({
       text-align: right;
       color: rgb(255, 27, 80);
       font-size: 28px;
+    }
+  }
+}
+@media screen and (max-width: 769px) {
+  .shop_list {
+    .shop_col {
+      width: 40%;
+      margin: 5px;
     }
   }
 }

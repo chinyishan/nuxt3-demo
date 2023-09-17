@@ -5,7 +5,6 @@
       <Button @click="dataCount.add" />
       <h2>{{ dataCount.count }}</h2>
     </div>
-    {{ data }}
   </div>
 </template>
 
@@ -27,21 +26,21 @@ useServerSeoMeta({
 const dataCount = useAddCount();
 
 //單一頁面引入
-useHead({
-  link: [
-    {
-      rel: "stylesheet",
-      href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-    },
-  ],
-  script: [
-    {
-      src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-      async: true,
-      tagPosition: "bodyClose",
-    },
-  ],
-});
+// useHead({
+//   link: [
+//     {
+//       rel: "stylesheet",
+//       href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+//     },
+//   ],
+//   script: [
+//     {
+//       src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+//       async: true,
+//       tagPosition: "bodyClose",
+//     },
+//   ],
+// });
 </script>
 
 <style lang="scss" scoped>

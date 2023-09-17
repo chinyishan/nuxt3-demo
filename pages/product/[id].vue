@@ -1,23 +1,24 @@
 <template>
-  <h1>詳細商品</h1>
-  <!-- {{ data }} -->
-  <section>
-    <div class="product_row">
-      <div class="product_col pic">
-        <img :src="data.thumbnail" alt="pd" />
-      </div>
-      <div class="product_col">
-        <div class="description txt">
-          <h2 class="title">{{ data.title }}</h2>
-          <h3>brand : {{ data.brand }}</h3>
-          <p>{{ data.description }}</p>
+  <div>
+    <h1>詳細商品</h1>
+    <section>
+      <div class="product_row">
+        <div class="product_col pic">
+          <img :src="data.thumbnail" alt="pd" />
         </div>
-        <div class="description price">
-          <strong>${{ data.price }}</strong>
+        <div class="product_col">
+          <div class="description txt">
+            <h2 class="title">{{ data.title }}</h2>
+            <h3>brand : {{ data.brand }}</h3>
+            <p>{{ data.description }}</p>
+          </div>
+          <div class="description price">
+            <strong>${{ data.price }}</strong>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>
 
 <script setup>

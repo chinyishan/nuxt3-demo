@@ -1,0 +1,9 @@
+{
+  "front_page": "首頁",
+  "about_us": "關於我們",
+  "contact_us": "聯絡我們",
+  "product_description": "產品介紹",
+  "latest_news": "最新消息",
+  "history": "歷史沿革",
+  "about_content": "<div>\n  <h1>隱私權政策</h1>\n  <p>本政策所涵蓋之範圍</p>\n  <ul>\n    <li style=\"color:#f00\">\n      (1) 本政策所涵蓋之範圍包括所有 TheCodingPro 透過本網站（thecodingpro.com）所向您蒐集個人資訊及其後續之利用、處理行為，包含：使用者名稱、職業、 Email 、連絡電話及網址，或其他您註冊時或其後所同意 TheCodingPro 蒐集之個人資訊。\n    </li>\n    <li>(2) 本政策之效力範圍僅及於本網站，若您點選第三人網站之連結或廣告，拜訪各該網站或網頁時，應依各該網站或網頁之經營者所定之隱私權政策規定處理，與 TheCodingPro 無涉。</li>\n    <li>(3)於使用 TheCodingPro 所提供之服務前，請確認您能確實遵守本政策所列全部條款，若您不同意全部或部分者，則請勿使用本網站服務。 </li>\n    </ul>\n    <script>alert('123')</script>\n</div>\n"
+}

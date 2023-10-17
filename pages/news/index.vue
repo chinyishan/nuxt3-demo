@@ -1,91 +1,61 @@
 <template>
   <div>
-    <h1>最新消息</h1>
+    <h1>多國語系</h1>
+    <div class="sel">
+      <select v-model="locale">
+        <option value="zh-TW">zh-TW</option>
+        <option value="en-US">en-US</option>
+        <option value="ja-JP">ja-JP</option>
+      </select>
+    </div>
+    <div class="lang">
+      <div class="menu">
+        <a>{{ $t("front_page") }}</a>
+        <a>{{ $("about_us") }}</a>
+        <a>{{ $("contact_us") }}</a>
+        <a>{{ $("product_description") }}</a>
+        <a>{{ $("latest_news") }}</a>
+        <a>{{ $("history") }}</a>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-// const getData = () =>
-//   new Promise((resolve) => setTimeout(() => resolve("data"), 1000));
-
-// async函数会被编译成generator函数 (babel会编译成更本质的形态，这里我们直接用generator)
-// function testG() {
-//   // await被编译成了yield
-//   const data = yield getData();
-//   console.log("data: ", data);
-//   const data2 = yield getData();
-//   console.log("data2: ", data2);
-//   return "success";
-// }
-
-// function timeout() {
-//   return new Promise((resolve) =>
-//     setTimeout(() => {
-//       console.log(0);
-//       useServerSeoMeta({
-//         title: "Product",
-//         description: "商品 - meta tag 設定",
-//         ogTitle: "Product",
-//         ogDescription: "商品 - meta tag 設定",
-//       });
-//     }, 500)
-//   );
-// }
-
-// function wait(ms) {
-//   return new Promise((resolve, reject) => {
-//     setTimeout(() => {
-//       console.log(0);
-//       useServerSeoMeta({
-//         title: "Product",
-//         description: "商品 - meta tag 設定",
-//         ogTitle: "Product",
-//         ogDescription: "商品 - meta tag 設定",
-//       });
-//       resolve(ms);
-//     }, ms);
-//   });
-// }
-// (async () => {
-//   console.log("Starting...");
-//   await wait(500);
-// })();
-
-// const setAsyncTimeout = (cb, timeout = 0) =>
-//   new Promise((resolve) => {
-//     setTimeout(() => {
-//       cb();
-//       resolve();
-//     }, timeout);
-//   });
-
-// const doStuffAsync = async () => {
-//   await setAsyncTimeout(() => {
-//     console.log(0);
-//     useSeoMeta({
-//       title: "Product",
-//       description: "商品 - meta tag 設定",
-//       ogTitle: "Product",
-//       ogDescription: "商品 - meta tag 設定",
-//     });
-//   }, 500);
-// };
-
-// doStuffAsync();
-
-// async function cc() {
-//   setTimeout(() => {
-//     console.log(0);
-//     useServerSeoMeta({
-//       title: "Product",
-//       description: "商品 - meta tag 設定",
-//       ogTitle: "Product",
-//       ogDescription: "商品 - meta tag 設定",
-//     });
-//   }, 500);
-// }
-
-// await cc();
+const { locale } = useI18n();
 
 console.log(2);
 </script>
+
+<style>
+.menu {
+  width: 300px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  cursor: pointer;
+  color: #84551c;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.sel {
+  width: 30%;
+  margin: 0 auto;
+}
+.sel select {
+  width: 100%;
+  height: 30px;
+  border-radius: 20px;
+  text-align: center;
+  border: 1px solid #d4613e;
+  margin: 0 auto 20px;
+}
+select:active,
+select:focus {
+  outline: none;
+}
+</style>

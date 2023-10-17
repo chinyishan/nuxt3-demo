@@ -3,12 +3,12 @@
     <header class="wrap_header">
       <nav class="content_nav">
         <ul class="nav_list">
-          <li><NuxtLink to="/">Home</NuxtLink></li>
-          <li><NuxtLink to="/product">product</NuxtLink></li>
-          <li><NuxtLink to="/about">About</NuxtLink></li>
-          <li><NuxtLink to="/vote">vote</NuxtLink></li>
+          <li><NuxtLink to="/">首頁</NuxtLink></li>
+          <li><NuxtLink to="/product">產品</NuxtLink></li>
+          <li><NuxtLink to="/about">關於</NuxtLink></li>
+          <li><NuxtLink to="/vote">投票</NuxtLink></li>
+          <li><NuxtLink to="/news">語系</NuxtLink></li>
           <!-- <li><NuxtLink to="/users-admins/1313">users</NuxtLink></li> -->
-          <!-- <li><NuxtLink to="/news">News</NuxtLink></li> -->
         </ul>
       </nav>
     </header>

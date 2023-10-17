@@ -9,13 +9,19 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "lang": "node GoogleSheetToJson.js"
   },
   "devDependencies": {
+    "@nuxtjs/i18n": "8.0.0-beta.10",
     "@nuxt/devtools": "latest",
+    "@types/node": "^18",
+    "flat": "^5.0.2",
+    "fs-extra": "^11.1.1",
     "nuxt": "^3.7.1",
     "sass": "^1.62.0",
-    "sass-loader": "^13.2.2"
+    "sass-loader": "^13.2.2",
+    "spreadsheet-to-json": "^2.0.0"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",

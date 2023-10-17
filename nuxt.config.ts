@@ -9,11 +9,34 @@ export default defineNuxtConfig({
   "modules": [
       [
           '@pinia/nuxt',
+          '@nuxtjs/i18n',
           {
               'autoImports': ['defineStore', 'acceptHMRUpdate'],
           },
       ]
   ],
+  "i18n": {
+    "strategy": 'no_prefix',
+    "locales": [
+      {
+        "code": 'zh-TW',
+        "file": 'zh-TW.json'
+      },
+      {
+        "code": 'en-US',
+        "file": 'en-US.json'
+      },
+      {
+        "code": 'ja-JP',
+        "file": 'ja-JP.json'
+      },
+    ],
+    "langDir": 'language',
+    "defaultLocale": 'zh-TW',
+    "detectBrowserLanguage": {
+      "useCookie": true,
+    }
+  },
   "components": [
     { path: '~/calendar-module/components' },
     { path: '~/user-module/components', pathPrefix: false },

@@ -7,13 +7,13 @@ export default defineNuxtConfig({
     "dirs": ['stores']
   },
   "modules": [
-      [
-          '@pinia/nuxt',
-          '@nuxtjs/i18n',
-          {
-              'autoImports': ['defineStore', 'acceptHMRUpdate'],
-          },
-      ]
+    '@nuxtjs/i18n',
+    [
+      '@pinia/nuxt',
+      {
+        'autoImports': ['defineStore', 'acceptHMRUpdate'],
+      },
+    ]
   ],
   "i18n": {
     "strategy": 'no_prefix',
@@ -53,7 +53,6 @@ export default defineNuxtConfig({
         { name: 'format-detection', content: 'telephone=no' },
         { property: "og:title", content: "NUXT3-DEMO" },
         { property: "og:description", content: "全域 - meta tag 設定" },
-        // { property: "og:url", content: "http://localhost:3000/" },
       ],
       bodyAttrs: {
         class: 'test'

@@ -11,11 +11,11 @@
     <div class="lang">
       <div class="menu">
         <a>{{ $t("front_page") }}</a>
-        <a>{{ $("about_us") }}</a>
-        <a>{{ $("contact_us") }}</a>
-        <a>{{ $("product_description") }}</a>
-        <a>{{ $("latest_news") }}</a>
-        <a>{{ $("history") }}</a>
+        <a>{{ $t("about_us") }}</a>
+        <a>{{ $t("contact_us") }}</a>
+        <a>{{ $t("product_description") }}</a>
+        <a>{{ $t("latest_news") }}</a>
+        <a>{{ $t("history") }}</a>
       </div>
     </div>
   </div>
@@ -23,8 +23,7 @@
 
 <script setup>
 const { locale } = useI18n();
-
-console.log(2);
+console.log(locale);
 </script>
 
 <style>

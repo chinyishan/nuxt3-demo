@@ -43,6 +43,7 @@ export default defineNuxtConfig({
     { path: '~/components/special-components', prefix: 'Special' },
     '~/components'
   ],
+  css: ["@/assets/scss/style.scss"],
   app: {
     head: {
       title: 'NUXT3-DEMO',

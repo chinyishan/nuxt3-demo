@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <NuxtLayout name="layout-name">
     <h1>商品列表</h1>
     <div class="shop_list">
       <div class="shop_col" v-for="item in data.products" :key="item.id">
@@ -15,14 +15,17 @@
         </div>
       </div>
     </div>
-    <!-- {{ data }} -->
-  </div>
+  </NuxtLayout>
 </template>
 
 <script setup>
 // import axios from "axios";
 const { data } = await useFetch("https://dummyjson.com/products");
 // console.log(data.value);
+
+definePageMeta({
+  layout: "custom",
+});
 
 useSeoMeta({
   title: () => `商品列表-${data.value.limit}`,

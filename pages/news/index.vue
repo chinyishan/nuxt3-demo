@@ -26,7 +26,7 @@ const { locale } = useI18n();
 console.log(locale);
 </script>
 
-<style>
+<style lang="scss" scoped>
 .menu {
   width: 300px;
   margin: 0 auto;

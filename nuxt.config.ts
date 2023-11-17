@@ -43,7 +43,22 @@ export default defineNuxtConfig({
     { path: '~/components/special-components', prefix: 'Special' },
     '~/components'
   ],
-  css: ["@/assets/scss/style.scss"],
+  // css:["@/assets/scss/style.scss"],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "@/assets/scss/style.scss" as *;'
+        }
+      }
+    }
+  },
+  // plugins: [
+  //   { src: "~/plugins/swiper.js", ssr: true },
+  // ],
+  // build: {
+  //   transpile: ['swiper']
+  // },
   app: {
     head: {
       title: 'NUXT3-DEMO',

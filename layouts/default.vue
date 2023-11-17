@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Banner />
+    <!-- <Banner /> -->
     <NuxtPage />
     <Footer />
   </div>
@@ -14,6 +14,4 @@
 }
 </style>
 
-<script setup>
-
-</script>
+<script setup></script>

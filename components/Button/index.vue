@@ -4,8 +4,8 @@
   </div>
 </template>
 
-<style>
-  button {
-    padding: 5px 10px;
-  }
+<style lang="scss">
+button {
+  padding: 5px 10px;
+}
 </style>

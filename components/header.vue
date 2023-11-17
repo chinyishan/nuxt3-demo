@@ -10,7 +10,7 @@
             <li><NuxtLink to="/about">關於我們</NuxtLink></li>
             <li><NuxtLink to="/product">產品專區</NuxtLink></li>
             <li><NuxtLink to="/news">新訊中心</NuxtLink></li>
-            <li><NuxtLink to="/users-1">聯絡我們</NuxtLink></li>
+            <li><NuxtLink to="/manufacturer">聯絡我們</NuxtLink></li>
             <li><NuxtLink to="/manufacturer">廠商專區</NuxtLink></li>
           </ul>
           <div class="nav-locale">
@@ -33,3 +33,4 @@ const locale = ref("1");
 //   }
 // })
 </script>
+<style lang="scss"></style>

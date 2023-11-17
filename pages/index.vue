@@ -1,5 +1,6 @@
 <template>
   <div>
+    <SwiperBanner />
     <h1>首頁 - Nuxt3</h1>
     <h2 class="title">玩法點擊扭蛋按鈕</h2>
     <p>

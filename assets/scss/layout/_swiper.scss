@@ -1,0 +1,72 @@
+//swiper
+@import "swiper/css";
+@import "swiper/css/navigation";
+@import "swiper/css/pagination";
+@import "swiper/css/autoplay";
+@import "swiper/css/effect-fade";
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.swiper-slide {
+  background-color: transparent;
+  width: 100%;
+  height: auto;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+// 自訂樣式
+.swiper-container {
+  position: relative;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 50%;
+    transform: translate(0, -50%);
+    width: calc(14px + 1.6vw);
+    height: calc(14px + 1.6vw);
+    border-radius: 100%;
+    background-color: $white;
+    border: 1px solid $green-light-2;
+    z-index: 10;
+
+    &::after {
+      font-size: calc(12px + 0.2vw);
+      font-weight: 900;
+      color: $green-default;
+      text-align: center;
+    }
+  }
+  .swiper-button-prev {
+    left: 1vw;
+  }
+  .swiper-button-next {
+    right: 1vw;
+  }
+  .swiper-pagination {
+    bottom: calc(-20px + -1vw);
+  }
+  .swiper-pagination-bullet {
+    width: calc(5px + 0.2vw) !important;
+    height: calc(5px + 0.2vw) !important;
+    margin: calc(2px + 0.1vw) !important;
+    background: $content;
+    opacity: 0.5;
+  }
+  .swiper-pagination-bullet-active {
+    background: $green-default;
+    opacity: 1;
+    padding: 0 15px;
+    border-radius: 6px;
+    transition: 0.5s;
+  }
+}

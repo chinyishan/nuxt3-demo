@@ -56,14 +56,17 @@
   </div>
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Autoplay } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/vue";
+// import { Navigation, Autoplay } from "swiper";
 // import "swiper/css";
 // import "swiper/css/navigation";
 // const modules = [Autoplay, Navigation];
 
+// onMounted(() = > {
+
+// })
 const swiperConfigBrand = {
-  modules: [Autoplay, Navigation],
+  modules: [SwiperAutoplay, SwiperNavigation],
   slidesPerView: 5,
   centeredSlides: true,
   spaceBetween: 10,

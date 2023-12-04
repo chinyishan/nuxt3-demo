@@ -8,6 +8,7 @@ export default defineNuxtConfig({
   },
   "modules": [
     '@nuxtjs/i18n',
+    'nuxt-swiper',
     [
       '@pinia/nuxt',
       {
@@ -37,13 +38,14 @@ export default defineNuxtConfig({
       "useCookie": true,
     }
   },
-  "components": [
-    { path: '~/calendar-module/components' },
-    { path: '~/user-module/components', pathPrefix: false },
-    { path: '~/components/special-components', prefix: 'Special' },
-    '~/components'
-  ],
+  // "components": [
+  //   { path: '~/calendar-module/components' },
+  //   { path: '~/user-module/components', pathPrefix: false },
+  //   { path: '~/components/special-components', prefix: 'Special' },
+  //   '~/components'
+  // ],
   // css:["@/assets/scss/style.scss"],
+  // css: ['element-plus/dist/index.css',],
   vite: {
     css: {
       preprocessorOptions: {

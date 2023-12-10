@@ -45,13 +45,13 @@
           title="測試"
         />
       </SwiperSlide>
-      <SwiperSlide>
+      <!-- <SwiperSlide>
         <img
           src="https://picsum.photos/id/115/300/300"
           alt="測試"
           title="測試"
         />
-      </SwiperSlide>
+      </SwiperSlide> -->
     </Swiper>
   </div>
 </template>

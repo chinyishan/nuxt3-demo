@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout name="layout-name">
+    <Banner />
     <h1>商品列表</h1>
     <div class="shop_list">
       <div class="shop_col" v-for="item in data.products" :key="item.id">

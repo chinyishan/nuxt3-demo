@@ -38,6 +38,16 @@ export default defineNuxtConfig({
       "useCookie": true,
     }
   },
+  // 特定組件 auto import
+  // "components": {
+  //   "dirs": [
+  //     {
+  //         "path": "~/components/global",
+  //         "global": true
+  //     }
+  //   ]
+  // },
+  
   // "components": [
   //   { path: '~/calendar-module/components' },
   //   { path: '~/user-module/components', pathPrefix: false },

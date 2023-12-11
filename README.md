@@ -50,6 +50,28 @@ npx nuxi@latest init <project-name>
 ### plugins 
 * 插件目錄
 * Nuxt3 會自動加載。通過 .server 或 .client 後綴控制在服務器或客戶端加載
+* 第一種方式 - provide，注入 plugins 前面要加 $
+```javascript=
+const { $hello } = useNuxtApp()
+```
+* 第二種方式 - directive，整合第三方插件
+```javascript=
+//timeformat.js
+//vue3 創建模板語法，使用 directive
+nuxtApp.vueApp.directive("timeformat", {
+    //mounted 回傳兩參數，element(DOM元素)，binding(連接)
+    mounted(el, binding) {
+      const time = dayjs(binding.value).format("YYYY年MM月DD日");
+      el.innerText = time;
+    },
+  });
+```
+* 第三種方式 - use，Vue3 套件掛載到nuxt
+```javascript=
+//calendar.js
+nuxtApp.vueApp.use(VCalendar);
+```
+* plugins 可在檔名中間使用 .server 或 .client 來決定要 server 端或 client 端載入插件
 
 ### middleware 
 * 路由中間件

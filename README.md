@@ -94,10 +94,12 @@ nuxtApp.vueApp.use(VCalendar);
 
 
 ## 路由 pages
+
 ### pages
 * Nuxt路由基於vue-router，根據文件名從pages/目錄中創建的每個組件生成路由
 * 需要使用 pages/ 新增多個頁面，就需要使用 `<NuxtPage />` 當作網頁的進入點
-#### app.vue
+
+### app.vue
 ```htmlembedded=
 <template>
  <div>
@@ -106,7 +108,23 @@ nuxtApp.vueApp.use(VCalendar);
 </template>
 ```
 
+### [...slug].vue，建立404頁面
+* 所有找不到頁面的網址都會進入的這頁
+* 同層不能有 [] 動態路由，否則優先權會吃不到
+```
+<script setup>
+  const route = useRoute();
+  const event = useRequestEvent();
+  setResponseStatus(event, 404);
+</script>
+<template>
+  <h1>404 Not Found</h1>
+  <p>{{ route.params.slug }}</p>
+</template>
+```
+
 ## SEO and Meta
+
 ### nuxt.config.ts
 * 全域的 meta tag 設定
 ```javascript=
@@ -221,24 +239,46 @@ setup
 const store = useMainStore()
 store.count++
 ```
+
 ## Components (Nuxt内置组件)
 詳細: https://nuxt.com/docs/api/components/nuxt-page
 
-### NuxtPage
+### <NuxtPage>
 * 需要NuxtPage 来显示位于 pages/ 目录中的顶层页面或嵌套页面。
 * <NuxtPage/> 是 Vue Router <RouterView/>組件的整合，跟 <RouterView/> 一樣的使用方式。
 
-### NuxtLayout
+### <NuxtLayout>
 * `<NuxtLayout />`可用于覆盖 app.vue, error.vue 甚至/pages目录中的页面组件上default 布局。
 
-### NuxtLink
+### <NuxtLink>
 * 處理應用中的任何類型鏈接
-```htmlembedded=
+```
 <NuxtLink to="/about">
     Nuxt website
 </NuxtLink>
 ```
+### <NuxtLoadingIndicator>
+* 在頁面導航之間顯示進度條，客製化換頁 Loading
+* 在 app.vue 或 layouts/ 中新增
+```
+<NuxtLoadingIndicator color="#02b24e" :height="10" :throttle="0">
+  <p>Loagding</p>
+</NuxtLoadingIndicator>
+```
+* 利用hook 監聽開始與結束
+```
+const nuxtApp = useNuxtApp();
+const isLoading = ref(false);
+nuxtApp.hook("page:start", () => {
+  isLoading.value = true;
+});
+nuxtApp.hook("page:finish", () => {
+  isLoading.value = false;
+});
+```
+
 ## Composables (Nuxt組合函式)
+
 ### useAsyncData
 在頁面、組件和插件中，可使用useAsyncData來訪問異步解析的數據。
 ```javascript=
@@ -264,3 +304,83 @@ const gotoAndPage = (path) => {
 ```javascript=
 const route = useRoute();
 ```
+
+## Nuxt 環境變數
+* 使用環境變數切割不同環境所需要的參數。
+* production、staging、develop....
+
+### Runtime Config 的設定
+* runtimeConfig 底下只能在 server 端取得
+* 一般 API URL 等環境差異有關的變數放 public，可在 client 端取得
+* 要重複使用的 API 要寫在 public
+```
+export default defineNuxtConfig({
+ "runtimeConfig": {
+   "token": '1234567890',
+   "public": {
+     "apiUrl": 'https://www.test.com',
+   }
+ },
+})
+```
+* 在 refresh 拿不到 server 的 token，會找不到 
+```
+Authorization: Bearer undefined
+```
+
+### process.server / process.client
+* 判別在 server 還是 client 端執行
+```
+if (process.server) {
+  console.log("server token:", config.token);
+}
+```
+
+### .env 設置變數
+* 名稱一定大寫的 NUXT 開頭，透過底線來區分，變數名稱也要全部大寫，會在轉換成小寫去自動覆蓋 nuxt.config 裡面的runtimeConfig 設定
+```
+NUXT_TOKEN=1234567890
+NUXT_PUBLIC_API_URL=https://www.text.com.tw
+```
+
+### vite 設置 .env
+* nuxt.config.ts
+```
+ "vite": {
+   "define": {
+     "process.env": process.env,
+   },
+ },
+```
+* .env
+```
+WEB_URL=https://www.mike.com
+ENV=local
+TOKEN=1234567890
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

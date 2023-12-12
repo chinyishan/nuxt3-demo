@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   devtools: { 
     enabled: true
   },
+  "runtimeConfig": {
+    "token": '',
+    "public": {
+      "apiUrl": '',
+    }
+  }, 
   "imports": {
     "dirs": ['stores']
   },

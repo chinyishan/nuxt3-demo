@@ -14,6 +14,8 @@
     <h2 v-timeformat="'1702308518986'"></h2>
     <hr />
     <VDatePicker v-model="selectedDate" />
+    <hr />
+    <button @click="refresh">Authorization: Bearer undefined</button>
   </div>
 </template>
 <script setup>
@@ -25,6 +27,18 @@ const { $hello } = useNuxtApp();
 
 // 注入 plugins 的插件
 const selectedDate = ref(new Date());
+
+// 環境變數
+const config = useRuntimeConfig();
+const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
+  headers: {
+    Authorization: `Bearer ${config.token}`,
+  },
+});
+
+if (process.server) {
+  console.log("server token:", config.token);
+}
 
 // definePageMeta({
 //   pageTransition: {

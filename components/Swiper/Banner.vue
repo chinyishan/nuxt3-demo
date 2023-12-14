@@ -1,30 +1,11 @@
 <template>
   <div class="swiper-container">
     <Swiper class="swiper-banner" v-bind="swiperConfigBrand">
-      <!--       
-      :modules="modules"
-      :slides-per-view="5"
-      :space-between="10"
-      :centered-slides="true"
-      :grabCursor="true"
-      :loop="true"
-      :speed="1000"
-      navigation 
-    -->
-      <!--       
-      :autoplay="{
-        delay: 2000,
-        disableOnInteraction: false,
-      }" 
-    -->
-      <SwiperSlide>
-        <img
-          src="https://picsum.photos/id/111/300/300"
-          alt="測試"
-          title="測試"
-        />
+      <SwiperSlide v-for="item in testData" :key="item.id">
+        <img :src="item.pic" :alt="item.title" :title="item.title" />
+        <h4>{{ item.title }}</h4>
       </SwiperSlide>
-      <SwiperSlide>
+      <!-- <SwiperSlide>
         <img
           src="https://picsum.photos/id/112/300/300"
           alt="測試"
@@ -44,37 +25,36 @@
           alt="測試"
           title="測試"
         />
-      </SwiperSlide>
-      <!-- <SwiperSlide>
-        <img
-          src="https://picsum.photos/id/115/300/300"
-          alt="測試"
-          title="測試"
-        />
       </SwiperSlide> -->
     </Swiper>
   </div>
 </template>
 <script setup>
-// import { Swiper, SwiperSlide } from "swiper/vue";
-// import { Navigation, Autoplay } from "swiper";
-// import "swiper/css";
-// import "swiper/css/navigation";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Autoplay } from "swiper";
+import { useTestStore } from "~/stores/test";
 // const modules = [Autoplay, Navigation];
 
-// onMounted(() = > {
+const { testData } = useTestStore();
 
-// })
 const swiperConfigBrand = {
-  modules: [SwiperAutoplay, SwiperNavigation],
-  slidesPerView: 5,
-  centeredSlides: true,
+  modules: [Autoplay, Navigation],
+  slidesPerView: 3,
   spaceBetween: 10,
+  centeredSlides: true,
   loop: true,
-  loopAddBlankSlides: true,
   grabCursor: true,
   speed: 1000,
   navigation: true,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    769: {
+      slidesPerView: 5,
+    },
+  },
 };
 </script>
 <style lang="scss">

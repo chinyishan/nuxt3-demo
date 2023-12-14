@@ -14,7 +14,6 @@ export default defineNuxtConfig({
   },
   "modules": [
     '@nuxtjs/i18n',
-    'nuxt-swiper',
     [
       '@pinia/nuxt',
       {
@@ -22,6 +21,7 @@ export default defineNuxtConfig({
       },
     ]
   ],
+  // 'nuxt-swiper',
   "i18n": {
     "strategy": 'no_prefix',
     "locales": [
@@ -91,18 +91,18 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: 'test'
       },
-      link: [
-        {
-          rel: "stylesheet",
-          href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-        },
-      ],
-      script: [
-        {
-          src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-          async: true,
-        },
-      ],
+      // link: [
+      //   {
+      //     rel: "stylesheet",
+      //     href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
+      //   },
+      // ],
+      // script: [
+      //   {
+      //     src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
+      //     async: true,
+      //   },
+      // ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   }

@@ -6,14 +6,14 @@ npx nuxi@latest init <project-name>
 ```
 
 ## 目錄配置
-### assets 
+## assets 
 * 樣式表（CSS、SASS 等）、字體、icon
 
-### public
+## public
 * 靜態資源，不需要過編譯的檔案
 * 可以從瀏覽器通過根URL`/`獲得`public/`目錄中的文件
 
-### composables
+## composables
 * nuxt3 新增的，可存放的一些公共 hooks 或者 api。
 * 在 composables 目錄下模塊的同名導出會被自動引入
 * 不能跨組件儲存資料，每次使用會建立新的 stores，所以需要用 pinia
@@ -24,7 +24,7 @@ npx nuxi@latest init <project-name>
 }
 ```
 
-### components 
+## components 
 * vue 组件，Nuxt 会自动导入 components/目錄中的所有組件
 * 設定資料夾讓特定組件有 auto import 的功能
 ```javascript=
@@ -38,16 +38,16 @@ npx nuxi@latest init <project-name>
 }
 ```
 
-### layouts 
+## layouts 
 * 全局性的佈局組件，可以應用到頁面上
 
-### page
+## page
 * 會基於文件嵌套關係生成路由
 * 動態路由寫法變化
     * nuxt2 : _xxx
     * nuxt3 : pages/[id].vue
 
-### plugins 
+## plugins 
 * 插件目錄
 * Nuxt3 會自動加載。通過 .server 或 .client 後綴控制在服務器或客戶端加載
 * 第一種方式 - provide，注入 plugins 前面要加 $
@@ -73,23 +73,23 @@ nuxtApp.vueApp.use(VCalendar);
 ```
 * plugins 可在檔名中間使用 .server 或 .client 來決定要 server 端或 client 端載入插件
 
-### middleware 
+## middleware 
 * 路由中間件
 * 命名路由中間件，放置在 middleware/目錄中，在頁面使用時會通過異步導入自動加載 
 * 全局路由中間件，放置在 middleware/目錄中（帶.global 後綴），每次路由更改都會自動運行
 
-### server
+## server
 * 服務器路由
 * Nuxt2 使用 connect 作为内置的 server 框架
 * Nuxt3 使用自定義框架 h3 代替， h3 優勢
     * 兼容 connect、express 等中间件
     * Serverless , Workers ,Node.js 都可以运行
 
-### store
+## store
 * Nuxt3 不再提供Vuex，推薦使用pinia
 * pinia官網 : https://pinia.vuejs.org/zh/getting-started.html
 
-### nuxt.config.ts
+## nuxt.config.ts
 * 全域配置文件
 
 
@@ -359,28 +359,10 @@ ENV=local
 TOKEN=1234567890
 ```
 
+## nuxt-swiper
+* nuxt-swiper 0.1.9 -> swiper8
+* nuxt-swiper 1.2.2 對應新版 swiper
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### nuxt-swiper Bug
+* swiper loop autoplay 不起作用
+* "它有新的限制。循環模式下的幻燈片數量應至少是 slipsPerView 值的 2 倍。" 設置2倍數，它就會起作用。

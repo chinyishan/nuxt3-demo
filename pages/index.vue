@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>首頁-Nuxt3</h1>
-    <!-- <SwiperBanner /> -->
+    <SwiperBanner />
     <h2 class="title">composables-點擊按鈕: {{ count }}</h2>
     <button @click="add">composables-Add</button>
     <hr />

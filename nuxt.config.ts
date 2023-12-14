@@ -91,18 +91,18 @@ export default defineNuxtConfig({
       bodyAttrs: {
         class: 'test'
       },
-      // link: [
-      //   {
-      //     rel: "stylesheet",
-      //     href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-      //   },
-      // ],
-      // script: [
-      //   {
-      //     src: "https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js",
-      //     async: true,
-      //   },
-      // ],
+      link: [
+        {
+          rel: "stylesheet",
+          href: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css",
+        },
+      ],
+      script: [
+        {
+          src: "https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js",
+          async: true,
+        },
+      ],
     },
     pageTransition: { name: 'page', mode: 'out-in' },
   }

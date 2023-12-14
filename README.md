@@ -358,11 +358,12 @@ WEB_URL=https://www.mike.com
 ENV=local
 TOKEN=1234567890
 ```
-
+ 
 ## nuxt-swiper
 * nuxt-swiper 0.1.9 -> swiper8
+** 使用 loop 會整批複製一份 (會造成水合問題)
 * nuxt-swiper 1.2.2 對應新版 swiper
-
+** 使用 loop 會把上一個 silde 移至 最後
 ### nuxt-swiper Bug
 * swiper loop autoplay 不起作用
 * "它有新的限制。循環模式下的幻燈片數量應至少是 slipsPerView 值的 2 倍。" 設置2倍數，它就會起作用。

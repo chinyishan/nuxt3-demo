@@ -1,61 +1,84 @@
 <template>
   <div class="swiper-container">
-    <Swiper class="swiper-banner" v-bind="swiperConfigBrand">
+    <!-- <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/id/111/300/300" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/id/111/300/300" alt="" />
+        </div>
+        <div class="swiper-slide">
+          <img src="https://picsum.photos/id/111/300/300" alt="" />
+        </div>
+      </div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+    </div> -->
+    <Swiper
+      class="swiper-banner"
+      :modules="[Autoplay, Navigation]"
+      :slidesPerView="3"
+      :spaceBetween="10"
+      :loop="true"
+      :centeredSlides="false"
+      :grabCursor="true"
+      :navigation="true"
+      :speed="1000"
+      :autoplay="{
+        delay: 5000,
+        disableOnInteraction: false,
+      }"
+      :breakpoints="{
+        769: {
+          slidesPerView: 5,
+          centeredSlides: true,
+        },
+      }"
+    >
       <SwiperSlide v-for="item in testData" :key="item.id">
         <img :src="item.pic" :alt="item.title" :title="item.title" />
         <h4>{{ item.title }}</h4>
       </SwiperSlide>
-      <!-- <SwiperSlide>
-        <img
-          src="https://picsum.photos/id/112/300/300"
-          alt="測試"
-          title="測試"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://picsum.photos/id/113/300/300"
-          alt="測試"
-          title="測試"
-        />
-      </SwiperSlide>
-      <SwiperSlide>
-        <img
-          src="https://picsum.photos/id/114/300/300"
-          alt="測試"
-          title="測試"
-        />
-      </SwiperSlide> -->
     </Swiper>
   </div>
 </template>
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Autoplay } from "swiper";
-import { useTestStore } from "~/stores/test";
 // const modules = [Autoplay, Navigation];
 
 const { testData } = useTestStore();
 
-const swiperConfigBrand = {
-  modules: [Autoplay, Navigation],
-  slidesPerView: 3,
-  spaceBetween: 10,
-  centeredSlides: true,
-  loop: true,
-  grabCursor: true,
-  speed: 1000,
-  navigation: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    769: {
-      slidesPerView: 5,
-    },
-  },
-};
+// const swiperConfigBrand = {
+//   modules: [Autoplay, Navigation],
+//   slidesPerView: 3,
+//   spaceBetween: 10,
+//   centeredSlides: true,
+//   loop: true,
+//   grabCursor: true,
+//   speed: 1000,
+//   navigation: true,
+//   autoplay: {
+//     delay: 5000,
+//     disableOnInteraction: false,
+//   },
+//   breakpoints: {
+//     769: {
+//       slidesPerView: 5,
+//     },
+//   },
+// };
+
+// new Swiper(".mySwiper", {
+//   slidesPerView: 5,
+//   spaceBetween: 10,
+//   loop: true,
+//   navigation: {
+//     nextEl: ".swiper-button-next",
+//     prevEl: ".swiper-button-prev",
+//   },
+// });
 </script>
 <style lang="scss">
 .swiper-container {

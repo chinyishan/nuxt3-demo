@@ -44,8 +44,8 @@
   </div>
 </template>
 <script setup>
-import { Swiper, SwiperSlide } from "swiper/vue";
-import { Navigation, Autoplay } from "swiper";
+// import { Swiper, SwiperSlide } from "swiper/vue";
+// import { Navigation, Autoplay } from "swiper";
 // const modules = [Autoplay, Navigation];
 
 const { testData } = useTestStore();
@@ -92,21 +92,6 @@ const { testData } = useTestStore();
         transform: scale(1);
         opacity: 1;
       }
-      // .brand-group {
-      //   padding: 10%;
-      //   .brand-pic {
-      //     border-radius: calc(10px + 0.2vw);
-      //     overflow: hidden;
-      //     box-shadow: 0 4px 20px 0px rgb(0, 0, 0, 0.2);
-      //     margin-bottom: calc(14px + 1vw);
-      //     background-color: $white;
-      //   }
-      //   .brand-title {
-      //     h3 {
-      //       text-align: center;
-      //     }
-      //   }
-      // }
     }
   }
 }

@@ -562,7 +562,7 @@ NUXT_PUBLIC_API_URL=https://www.text.com.tw
 ```
 * .env
 ```
-WEB_URL=https://www.mike.com
+WEB_URL=https://www.test.com
 ENV=local
 TOKEN=1234567890
 ```
@@ -576,7 +576,26 @@ const runtimeConfig = useRuntimeConfig()
 ** 使用 loop 會整批複製一份 (會造成水合問題)
 * nuxt-swiper 1.2.2 對應新版 swiper
 ** 使用 loop 會把上一個 silde 移至 最後
-
 ### nuxt-swiper Bug
 * swiper loop autoplay 不起作用
 * "它有新的限制。循環模式下的幻燈片數量應至少是 slipsPerView 值的 2 倍。" 設置2倍數，它就會起作用。
+
+## SCSS 變數 配置
+* 變數 和 完整的 style 分開設置。避免 style 渲染錯誤
+```
+css: ["@/assets/scss/style.scss"],
+vite: {
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: '@use "@/assets/scss/_var.scss" as *;',
+      }
+    }
+  }
+},
+experimental: {
+  inlineSSRStyles: false,
+  viewTransition: true,
+  renderJsonPayloads: true,
+},
+```

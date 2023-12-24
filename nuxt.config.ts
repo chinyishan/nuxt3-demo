@@ -60,13 +60,13 @@ export default defineNuxtConfig({
   //   { path: '~/components/special-components', prefix: 'Special' },
   //   '~/components'
   // ],
-  // css:["@/assets/scss/style.scss"],
+  css:["@/assets/scss/style.scss"],
   // css: ['element-plus/dist/index.css',],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/scss/style.scss" as *;'
+          additionalData: '@use "@/assets/scss/_var.scss" as *;'
         }
       }
     }
@@ -104,6 +104,6 @@ export default defineNuxtConfig({
         },
       ],
     },
-    pageTransition: { name: 'page', mode: 'out-in' },
+    // pageTransition: { name: 'page', mode: 'out-in' },
   }
 })

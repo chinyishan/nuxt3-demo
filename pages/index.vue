@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>首頁-Nuxt3</h1>
-    <SwiperBanner />
+    <!-- <SwiperBanner /> -->
+    <button @click="handleMiddleware">get api test Middleware</button>
     <h2 class="title">composables-點擊按鈕: {{ count }}</h2>
     <button @click="add">composables-Add</button>
     <hr />
@@ -39,6 +40,11 @@ const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
 if (process.server) {
   console.log("server token:", config.token);
 }
+
+const handleMiddleware = async () => {
+  const res = await fetch("/api/hello").then((res) => res.json());
+  console.log(res);
+};
 
 // definePageMeta({
 //   pageTransition: {

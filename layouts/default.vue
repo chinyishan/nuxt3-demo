@@ -1,13 +1,12 @@
 <template>
   <div class="app-container">
-    <!-- <NuxtLoadingIndicator color="#02b24e" :height="10" :throttle="0">
-      <p>Loagding</p>
-    </NuxtLoadingIndicator> -->
-    <h1 v-show="isLoading">Loading</h1>
+    <NuxtLoadingIndicator color="#02b24e" :height="10" :throttle="0">
+      <p>Loading</p>
+    </NuxtLoadingIndicator>
+    <!-- <p v-show="isLoading">Loading</p> -->
     <Header />
-    <!-- <Banner /> -->
+    <Banner />
     <NuxtPage />
-    <Footer />
   </div>
 </template>
 

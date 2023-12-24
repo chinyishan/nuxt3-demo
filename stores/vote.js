@@ -11,20 +11,22 @@ export const useVoteStore = defineStore("vote", () => {
     voteList.value = list;
   };
 
-  // 送出投票
+  // 送出投票，處理 error
+  // https://vue-lessons-api.vercel.app/vote/add
   const voteSend = async (type) => {
-    if (isLoad.value) return;
-    isLoad.value = true;
+    if (isLoad.value) return; // 紀錄狀態
+    isLoad.value = true; // 連續點擊不會一直觸發
+
     try {
       const res = await $fetch("https://vue-lessons-api.vercel.app/vote/add", {
         method: "POST",
-        body: { type },
+        body: { type }, //解構
       });
       setVoteList(res);
       alert("投票完成");
     } catch (error) {
       alert("暫時無法投票");
-    } finally {
+    } finally { //結束
       isLoad.value = false;
     }
   };

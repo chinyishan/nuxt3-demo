@@ -23,7 +23,14 @@ export const useTestStore = defineStore("test", () => {
     },
   ]);
 
+  const VoteStore = useVoteStore();
+
+  const VoteToTestStore = computed(() => {
+    VoteStore.voteList;
+  });
+
   return {
     testData,
+    VoteToTestStore,
   };
 });

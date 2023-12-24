@@ -443,7 +443,7 @@ export default defineNuxtRouteMiddleware((to, from) => {
 });
 ```
 
-## server
+## server 伺服器
 * nuxt3 本身是 node.js 的環境，可以做 server side render，而 nuxt3 有提供界接跟資料庫溝通
 * 常用到 api、routes、middleware
 

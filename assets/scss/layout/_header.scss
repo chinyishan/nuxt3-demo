@@ -26,16 +26,21 @@
 
         li {
           position: relative;
+
           a {
             position: relative;
             z-index: 2;
             font-size: $title-h5;
             font-weight: 600;
-            letter-spacing: 0.2em;
+            letter-spacing: 1px;
             white-space: nowrap;
             color: $default;
-            padding: 1.6vw 1.2vw;
+            padding: 30px 10px;
             transition: 0.3s ease-out;
+
+            &:hover {
+              color: $green-default;
+            }
           }
         }
       }

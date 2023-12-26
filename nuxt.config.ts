@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   },
   "modules": [
     '@nuxtjs/i18n',
+    '@nuxt/image',
     [
       '@pinia/nuxt',
       {
@@ -43,6 +44,9 @@ export default defineNuxtConfig({
     "detectBrowserLanguage": {
       "useCookie": true,
     }
+  },
+  image: {
+    dir: 'assets/images'
   },
   // 特定組件 auto import
   // "components": {

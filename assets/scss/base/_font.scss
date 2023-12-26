@@ -1,14 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
-// 文字變數
-$title-h1: 42px;
-$title-h2: 36px;
-$title-h3: 24px;
-$title-h4: 20px;
-$title-h5: 16px;
-$txt-p: 12px;
-$txt-span: 16px;
-
 body,
 h1,
 h2,
@@ -16,23 +7,31 @@ h3,
 h4,
 h5,
 h6,
-p {
-  font-family: "Noto Sans TC", sans-serif;
-  font-family: "Roboto", sans-serif;
+p,
+span {
+  font-family: "Noto Sans TC", sans-serif, "Roboto", sans-serif;
 }
+// 文字變數
+$title-h1: 28px;
+$title-h2: 24px;
+$title-h3: 20px;
+$title-h4: 18px;
+$title-h5: 16px;
+$txt-p: 14px;
+$txt-span: 14px;
 
 h1 {
   font-size: $title-h1;
   font-weight: 700;
-  letter-spacing: 6px;
+  letter-spacing: 2px;
   text-align: center;
   margin: 20px 0;
-  color: #02b24e;
+  color: #008e53;
 }
 h2 {
   font-size: $title-h2;
   font-weight: 900;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 }
 h3 {
   font-size: $title-h3;

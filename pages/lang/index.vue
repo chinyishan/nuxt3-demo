@@ -18,12 +18,20 @@
         <a>{{ $t("history") }}</a>
       </div>
     </div>
+
+    <div v-html="content"></div>
   </div>
 </template>
 
 <script setup>
+import { xssParse } from "@/lib/filterXss.js";
+
 const { locale } = useI18n();
 console.log(locale);
+
+// 測試-多國語系
+const { t } = useI18n();
+const content = computed(() => xssParse(t("about_content")));
 </script>
 
 <style lang="scss" scoped>

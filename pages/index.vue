@@ -3,19 +3,35 @@
     <h1>首頁-Nuxt3</h1>
     <!-- <SwiperBanner /> -->
     <button @click="handleMiddleware">get api test Middleware</button>
+    <br />
+    <br />
+    <NuxtErrorBoundary>
+      <ButtonOops />
+      <p>這裡是發生錯誤時，才會渲染出來的地方</p>
+      <template #error="{ error }">
+        <p style="color: red">An error occurred: {{ error }}</p>
+      </template>
+    </NuxtErrorBoundary>
+    <br />
+    <br />
     <h2 class="title">composables-點擊按鈕: {{ count }}</h2>
     <button @click="add">composables-Add</button>
-    <hr />
+    <br />
+    <br />
     <h2 class="title">store-點擊按鈕: {{ store.count }}</h2>
     <button @click="store.add">store-Add</button>
-    <hr />
+    <br />
+    <br />
     <h2>{{ $hello("Sunny") }}</h2>
-    <hr />
+    <br />
+    <br />
     <h2 v-timeformat="'Mon Dec 11 2023 23:28:38 GMT+0800 (GMT+08:00)'"></h2>
     <h2 v-timeformat="'1702308518986'"></h2>
-    <hr />
+    <br />
+    <br />
     <VDatePicker v-model="selectedDate" />
-    <hr />
+    <br />
+    <br />
     <button @click="refresh">Authorization: Bearer undefined</button>
   </div>
 </template>
@@ -42,7 +58,7 @@ if (process.server) {
 }
 
 const handleMiddleware = async () => {
-  const res = await fetch("/api/hello").then((res) => res.json());
+  const res = await fetch("/api/he").then((res) => res.json());
   console.log(res);
 };
 

@@ -14,6 +14,10 @@
       <option value="en">en-US</option>
     </select>
     <button @click="handleLang">lang</button> -->
+
+    <h2>useRoute</h2>
+    <!-- <p>{{ mountain.title }}</p>
+    <p>{{ mountain.description }}</p> -->
   </div>
 </template>
 
@@ -36,7 +40,7 @@
   useCookie，讀取寫入 cookie
   const cookie = useCookie(name, options)
  */
-const counter = useCookie("counter");
+// const counter = useCookie("counter");
 //如果 cookie 不存在，則最初將其設定為隨機值
 // counter.value = counter.value || Math.round(Math.random() * 1000);
 // console.log(counter);
@@ -57,8 +61,33 @@ const counter = useCookie("counter");
 /* 
   useError 捕獲全域錯誤
 */
-const error = useError();
-console.log(error);
+// const error = useError("444");
+// console.log(error);
+
+/* 
+  useFetch 獲取數據
+ */
+
+/* 
+  useHead 新增自訂各個頁面的頭部屬性
+ */
+// const title = ref("My useHead");
+// const description = ref("My useHead amazing Nuxt app");
+// useHead({
+//   title,
+//   meta: [
+//     {
+//       name: "description",
+//       content: description,
+//     },
+//   ],
+// });
+
+/* 
+  useRoute 返回當前路由
+*/
+// const route = useRoute();
+// console.log(route);
 </script>
 
 <style></style>

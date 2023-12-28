@@ -151,7 +151,7 @@ export default defineNuxtConfig({
 
 ### useHead
 * 可針對單一頁面的 meta tag 進行調整
-```javascript=
+```
 useHead({
  title: "About",
  meta: [
@@ -360,7 +360,7 @@ useFetch("/api/hello", {
 
 ### useRouter
 * 提供許多函式讓你操作網址像是push、replace、go等方法，再換頁上面更加方便
-```javascript=
+```
 const router = useRouter();
 
 const gotoAndPage = (path) => {
@@ -370,7 +370,7 @@ const gotoAndPage = (path) => {
 
 ### useRoute 
 * useRoute 可以取得所有跟 route 網址有關的所有參數資訊
-```javascript=
+```
 const route = useRoute();
 ```
 

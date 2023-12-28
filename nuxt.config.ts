@@ -3,6 +3,10 @@ export default defineNuxtConfig({
   devtools: { 
     enabled: true
   },
+  devServer: {
+    host: '0.0.0.0', // default: localhost
+    port: 1324
+  },
   "runtimeConfig": {
     "token": '',
     "public": {

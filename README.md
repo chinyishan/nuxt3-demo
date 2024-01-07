@@ -334,8 +334,10 @@ nuxtApp.hook("page:finish", () => {
 ## Composables (Nuxt組合函式)
 
 ### useAsyncData
-* 在頁面、組件和插件中，可使用useAsyncData來訪問異步解析的數據。
+* 在頁面、組件和插件中，可使用useAsyncData來訪問非同步解析的數據。
+* 可做拆解彈性較高處理
 * 雖然沒用變數接資料，但必須把資料做 return 
+* Key: 唯一的值，防止在 server 端和 client 端觸發兩次資料獲取，可帶可不帶，不帶的話會為自動幫你生成一個對應檔案名和編號的唯一 key，但是會建議都要帶。
 ```javascript=
 import axios from "axios";
 
@@ -345,8 +347,10 @@ const { data } = await useAsyncData("banner", async () => {
 });
 ```
 
-### useFetch
-使用 SSR 可組合項目從 API 取得資料。
+### useFetch 獲取數據
+* 使用 SSR 可組合項目從 API 取得資料。
+* `useAsyncData` + `$fetch` 包裝的 composables
+* 一般拿資料推薦使用 `useFetch`，需針對 key 或針對非同步處理的操作可使用 `useAsyncData`
 ```
 useFetch("/api/hello", {
   method: "GET",    // HTTP 請求的方法，GET(default)、POST 、 DELETE、PUT。

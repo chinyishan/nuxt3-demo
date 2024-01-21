@@ -126,6 +126,14 @@ nuxtApp.vueApp.use(VCalendar);
 
 ### 嵌套式 Router
 * 可做複雜 tab 效果
+* 搭配 `NuxtLink` 和 `NuxtPage`
+```
+<NuxtLink :to="`/courses/${route.params.courses}/`">內頁介紹</NuxtLink>
+<NuxtLink :to="`/courses/${route.params.courses}/A`">AA</NuxtLink>
+<NuxtLink :to="`/courses/${route.params.courses}/B`">BB</NuxtLink>
+<NuxtLink :to="`/courses/${route.params.courses}/C`">CC</NuxtLink>
+<NuxtPage />
+```
 
 ## SEO and Meta
 

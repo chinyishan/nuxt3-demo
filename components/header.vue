@@ -13,6 +13,7 @@
             <li><NuxtLink to="/vote">投票列表</NuxtLink></li>
             <li><NuxtLink to="/picture">圖片測試</NuxtLink></li>
             <li><NuxtLink to="/meta-head">MetaSEO</NuxtLink></li>
+            <li><NuxtLink to="/courses">courses列表</NuxtLink></li>
             <li>
               <NuxtLink
                 :to="{

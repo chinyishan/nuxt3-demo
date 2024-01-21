@@ -7,6 +7,10 @@
         <p>{{ item.title }}</p>
       </li>
     </ul>
+    <SvgIcon name="icon-globe" fill="#00A53A" stroke="#00A53A"></SvgIcon>
+    <SvgIcon name="earth-world" fill="#00A53A" stroke="#00A53A"></SvgIcon>
+    <SvgIcon name="icon-community" color="#00A53A"></SvgIcon>
+    <SvgIcon name="icon-documentation" color="#00A53A"></SvgIcon>
   </div>
 </template>
 

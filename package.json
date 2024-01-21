@@ -22,7 +22,8 @@
     "nuxt": "^3.8.2",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
-    "spreadsheet-to-json": "^2.0.0"
+    "spreadsheet-to-json": "^2.0.0",
+    "vite-plugin-svg-icons": "^2.0.1"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",

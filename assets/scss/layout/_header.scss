@@ -32,13 +32,16 @@
             z-index: 2;
             font-size: $title-h5;
             font-weight: 600;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
             white-space: nowrap;
             color: $default;
             padding: 30px 10px;
             transition: 0.3s ease-out;
 
             &:hover {
+              color: $green-default;
+            }
+            &.router-link-active {
               color: $green-default;
             }
           }

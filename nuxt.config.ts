@@ -1,11 +1,38 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
+
+// 把設定放在 config 
+const config = {
+  vite: {
+    server: {
+      proxy: {},
+    }, 
+  },
+}
+
+if (process.env.NODE_ENV === 'development') {
+  config.vite.server.proxy = {
+    '/VsWeb/api': {
+      target: 'https://www.vscinemas.com.tw/',
+      changeOrigin: true,
+    },
+  }
+}
+
+// export default defineNuxtConfig(config)
+
 export default defineNuxtConfig({
   devtools: { 
     enabled: true
   },
   devServer: {
     host: '0.0.0.0', // default: localhost
-    port: 1324
+    port: 1324,
+    https: {
+      key: './https/localhost+3-key.pem',
+      cert: './https/localhost+3.pem'
+    }
   },
   "runtimeConfig": {
     "token": '',
@@ -26,7 +53,6 @@ export default defineNuxtConfig({
       },
     ]
   ],
-  // 'nuxt-swiper',
   "i18n": {
     "strategy": 'no_prefix',
     "locales": [
@@ -61,7 +87,6 @@ export default defineNuxtConfig({
   //     }
   //   ]
   // },
-  
   // "components": [
   //   { path: '~/calendar-module/components' },
   //   { path: '~/user-module/components', pathPrefix: false },
@@ -69,7 +94,6 @@ export default defineNuxtConfig({
   //   '~/components'
   // ],
   css:["@/assets/scss/style.scss"],
-  // css: ['element-plus/dist/index.css',],
   vite: {
     css: {
       preprocessorOptions: {
@@ -77,7 +101,22 @@ export default defineNuxtConfig({
           additionalData: '@use "@/assets/scss/_var.scss" as *;'
         }
       }
-    }
+    },
+    plugins: [
+      createSvgIconsPlugin({
+        iconDirs: [path.resolve(process.cwd(), 'assets/icons')], //所有 svg 都放這
+        symbolId: '[dir]/[name]',
+        customDomId: '__svg__icons__dom__',
+      }),
+    ],
+    server: {
+      proxy: {
+        '/VsWeb/api': {
+          target: 'https://www.vscinemas.com.tw/',
+          changeOrigin: true,
+        },
+      },
+    }, 
   },
   // plugins: [
   //   { src: "~/plugins/swiper.js", ssr: true },

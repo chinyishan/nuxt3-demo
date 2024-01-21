@@ -11,6 +11,8 @@
 </template>
 
 <script setup>
+import "virtual:svg-icons-register";
+
 const nuxtApp = useNuxtApp();
 const isLoading = ref(false);
 nuxtApp.hook("page:start", () => {

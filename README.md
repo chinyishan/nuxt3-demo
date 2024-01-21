@@ -92,6 +92,25 @@ nuxtApp.vueApp.use(VCalendar);
 
 ### nuxt.config.ts
 * 全域配置文件
+* 可設定區分`開發`和`正式`環境 ，用環境變數來做一個判斷 ( `NODE_ENV` 是內建的環境變數 )
+```
+const config = {
+  vite: {
+    server: {
+      proxy: {},
+    }, 
+  },
+}
+if(process.env.NODE_ENV === 'development') {
+ config.vite.server.proxy = {
+   '/VsWeb/api': {
+     "target": 'https://www.vscinemas.com.tw/',
+     "changeOrigin": true,
+   },
+ }
+}
+export default defineNuxtConfig(config)
+```
 
 
 ## pages Router 配置
@@ -340,6 +359,44 @@ nuxtApp.hook("page:finish", () => {
 ```
 
 ## Composables (Nuxt組合函式)
+
+### Composables 的使用限制
+* 使用時應直接放在`<script setup>`下，直接註冊
+* 不應放在`函式`做包裝，或是 `watch`、`生命週期`
+
+#### 禁止使用一 : useFetch
+* useFetch 當成 axios，useFetch 類似生命週期，橫跨 server 和 client
+* 不應該再 click 才執行
+* 只在 client 拿資料，應使用 $fetch
+```
+const getData = async () => {
+  const { data } = await useFetch("https://api.github.com/orgs/nuxt")
+}
+
+<button type="button" @click="getData"> GET </button>
+```
+
+#### 禁止使用二 : watch
+* 應註冊完，再去 watch
+* 導致記憶體洩露
+```
+watch(elRef, (el) => {
+  useEventListener(el, 'click', () => {
+    // ...
+  })
+})
+```
+
+#### 禁止使用三 : onMounted 生命週期
+* Composables 有可能也有生命週期，應避免錯亂
+```
+onMounted(() => {
+  useInfiniteScroll(window, () => {
+    // ...
+  })
+})
+
+```
 
 ### useAsyncData
 * 在頁面、組件和插件中，可使用useAsyncData來訪問非同步解析的數據。
@@ -611,3 +668,53 @@ experimental: {
   renderJsonPayloads: true,
 },
 ```
+
+## SVG 解決方案
+* 安裝 vite svg
+```
+npm i vite-plugin-svg-icons -D
+```
+* vite svg 配置
+```
+import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import path from 'path'
+vite: {
+  plugins: [
+    createSvgIconsPlugin({
+      iconDirs: [path.resolve(process.cwd(), 'assets/icons')], //所有 svg 都放這
+      symbolId: '[dir]/[name]',
+      customDomId: '__svg__icons__dom__',
+    }),
+  ], 
+},
+```
+
+## 開發階段啟動 https 憑證
+* nuxt 3.4 版本以上才可使用
+```
+devServer: {
+  host: '0.0.0.0', // default: localhost
+  port: 1324,
+  https: {
+    key: './https/localhost+3-key.pem',
+    cert: './https/localhost+3.pem'
+  }
+},
+```
+
+## API 跨網域阻擋 (proxy server)
+* 在 vite 選項中加入proxy的設定
+* 開發階段可以根據不同 API 做 `/VsWeb/api` 的新增
+```
+"vite": {
+   "server": {
+     "proxy": {
+       '/VsWeb/api': {
+         "target": 'https://www.vscinemas.com.tw/',
+         "changeOrigin": true,
+       },
+     },
+   },
+ },
+```
+

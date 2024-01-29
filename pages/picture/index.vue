@@ -13,15 +13,32 @@
     <h2>import.meta.glob</h2>
     <ul>
       <li v-for="item in aboutDataTest" :key="item.id">
-        <img :src="images[item.pic]" :alt="item.title" :title="item.title" />
+        <img
+          :src="img.imagesJpg[item.pic]"
+          :alt="item.title"
+          :title="item.title"
+        />
         <p>{{ item.title }}</p>
       </li>
     </ul>
-    <!-- <SvgIcon name="icon-globe" fill="#00A53A" stroke="#00A53A"></SvgIcon>
-    <SvgIcon name="earth-world" fill="#00A53A" stroke="#00A53A"></SvgIcon>
+    <hr />
+    <h2>import.meta.glob - png</h2>
+    <ul>
+      <li v-for="item in iconDataTest" :key="item.id">
+        <img
+          :src="img.imagesPng[item.pic]"
+          :alt="item.title"
+          :title="item.title"
+        />
+        <p>{{ item.title }}</p>
+      </li>
+    </ul>
+    <hr />
+    <h2>SvgIcon</h2>
+    <SvgIcon name="icon-globe"></SvgIcon>
+    <SvgIcon name="earth-world"></SvgIcon>
     <SvgIcon name="icon-community" color="#00A53A"></SvgIcon>
-    <SvgIcon name="icon-documentation" color="#00A53A"></SvgIcon> -->
-    <!-- <img :src="images[dynamic_image_name]" alt="Discover Nuxt 3" /> -->
+    <SvgIcon name="icon-documentation" color="#00A53A"></SvgIcon>
   </div>
 </template>
 
@@ -63,16 +80,40 @@ const aboutDataTest = reactive([
   },
 ]);
 
-import { filename } from "pathe/utils";
+const iconDataTest = reactive([
+  {
+    id: 1,
+    title: "icon-11",
+    pic: "icon-1",
+  },
+  {
+    id: 2,
+    title: "icon-22",
+    pic: "icon-2",
+  },
+  {
+    id: 3,
+    title: "icon-33",
+    pic: "icon-3",
+  },
+]);
 
-const glob = import.meta.glob("~/assets/images/*.jpg", { eager: true });
-console.log(glob);
-const images = Object.fromEntries(
-  Object.entries(glob).map(([key, value]) => [filename(key), value.default])
-);
+// import { filename } from "pathe/utils";
 
-// const dynamic_image_name = aboutDataTest.pic;
-// console.log(dynamic_image_name);
+// const glob = import.meta.glob("~/assets/images/*.jpg", { eager: true });
+// const images = Object.fromEntries(
+//   Object.entries(glob).map(([key, value]) => [filename(key), value.default])
+// );
+// console.log(glob);
+
+// const globPng = import.meta.glob("~/assets/images/*.png", { eager: true });
+// const imagesPng = Object.fromEntries(
+//   Object.entries(globPng).map(([key, value]) => [filename(key), value.default])
+// );
+// console.log(globPng);
+
+const img = useImg();
+console.log(img);
 </script>
 
 <style lang="scss" scoped>

@@ -21,7 +21,7 @@
       :slidesPerView="3"
       :spaceBetween="10"
       :loop="true"
-      :loopedSlides="2"
+      :loopedSlides="4"
       :centeredSlides="false"
       :grabCursor="true"
       :navigation="true"
@@ -45,9 +45,9 @@
   </div>
 </template>
 <script setup>
-// import { Swiper, SwiperSlide } from "swiper/vue";
-// import { Navigation, Autoplay } from "swiper";
-// const modules = [Autoplay, Navigation];
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { Navigation, Autoplay } from "swiper";
+const modules = [Autoplay, Navigation];
 
 const { testData } = useTestStore();
 

@@ -35,10 +35,18 @@
     </ul>
     <hr />
     <h2>SvgIcon</h2>
-    <SvgIcon name="icon-globe"></SvgIcon>
-    <SvgIcon name="earth-world"></SvgIcon>
-    <SvgIcon name="icon-community" color="#00A53A"></SvgIcon>
-    <SvgIcon name="icon-documentation" color="#00A53A"></SvgIcon>
+    <SvgIcon
+      name="eye-on-2"
+      fill="#00A53A"
+      color="#00A53A"
+      style="color: red; fill: aqua"
+    ></SvgIcon>
+    <SvgIcon name="tabler" fill="#fa0"></SvgIcon>
+    <SvgIcon name="map" frll="#fa0"></SvgIcon>
+    <SvgIcon name="icon-globe" color="#fa0"></SvgIcon>
+    <SvgIcon name="earth-world" color="#fa0"></SvgIcon>
+    <SvgIcon name="icon-community" fill="#00A53A"></SvgIcon>
+    <SvgIcon name="icon-documentation" fill="#fa0"></SvgIcon>
   </div>
 </template>
 

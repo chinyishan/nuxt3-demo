@@ -1,6 +1,11 @@
 <template>
   <svg aria-hidden="true">
-    <use :xlink:href="svgName" :fill="props.fill" :stroke="props.stroke" />
+    <use
+      :xlink:href="svgName"
+      :color="props.color"
+      :fill="props.fill"
+      :stroke="props.stroke"
+    />
   </svg>
 </template>
 
@@ -14,6 +19,10 @@ const props = defineProps({
   fill: {
     type: String,
     // default: "none",
+  },
+  color: {
+    type: String,
+    default: "none",
   },
   stroke: {
     type: String,

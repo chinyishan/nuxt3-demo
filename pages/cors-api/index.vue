@@ -2,7 +2,7 @@
   <div>
     <h3>開發階段 CORS(跨網域) API 處理</h3>
     <br />
-    {{ data }}
+    {{ dataTest }}
     <br />
     <br />
     <ul>
@@ -24,13 +24,13 @@
 // });
 
 // 處理
+const dataTest = ref("");
+
 onMounted(async () => {
   const response = await $fetch("/VsWeb/api/GetLstDicCinema");
-  data.value = response;
+  dataTest.value = response;
   console.log(response);
 });
-
-const data = ref("");
 </script>
 
 <style></style>

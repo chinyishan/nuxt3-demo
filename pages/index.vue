@@ -2,6 +2,7 @@
   <div>
     <h1>首頁-Nuxt3</h1>
     <!-- <SwiperBanner /> -->
+    <!-- <SwiperProduct /> -->
     <button @click="handleMiddleware">get api test Middleware</button>
     <br />
     <br />
@@ -47,11 +48,13 @@ const selectedDate = ref(new Date());
 
 // 環境變數
 const config = useRuntimeConfig();
+console.log(config);
 const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
   headers: {
     Authorization: `Bearer ${config.token}`,
   },
 });
+console.log(data);
 
 if (process.server) {
   console.log("server token:", config.token);

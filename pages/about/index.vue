@@ -4,6 +4,8 @@
     <!-- <p>{{ data }}</p> -->
     <!-- <p>{{ dataBanner.data }}</p>
     <p>{{ dataBanner.data.value.name }}</p> -->
+    <p>{{ orgsData }}</p>
+    <!-- <p>{{ reposData }}</p> -->
   </div>
 </template>
 
@@ -64,6 +66,14 @@ import axios from "axios";
 //   }
 // );
 // console.log(data);
+
+//多個 API 請求 useFetch + Promise
+const [{ data: orgsData }, { data: reposData }] = await Promise.all([
+  useFetch(`https://api.github.com/orgs/nuxt`),
+  useFetch(`https://api.github.com/orgs/nuxt/repos`),
+]);
+console.log(orgsData);
+// console.log(reposData);
 </script>
 
 <style lang="scss" scoped>

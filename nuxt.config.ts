@@ -1,82 +1,82 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import path from 'path'
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
+import path from "path";
 
-// 把設定放在 config 
-const config = {
-  vite: {
-    server: {
-      proxy: {},
-    }, 
-  },
-}
+// 把設定放在 config
+// const config = {
+//   vite: {
+//     server: {
+//       proxy: {},
+//     },
+//   },
+// }
 
-if (process.env.NODE_ENV === 'development') {
-  config.vite.server.proxy = {
-    '/VsWeb/api': {
-      target: 'https://www.vscinemas.com.tw/',
-      changeOrigin: true,
-    },
-  }
-}
+// if (process.env.NODE_ENV === 'development') {
+//   config.vite.server.proxy = {
+//     '/VsWeb/api': {
+//       target: 'https://www.vscinemas.com.tw/',
+//       changeOrigin: true,
+//     },
+//   }
+// }
 
 // export default defineNuxtConfig(config)
 
 export default defineNuxtConfig({
-  devtools: { 
-    enabled: true
+  devtools: {
+    enabled: true,
   },
   devServer: {
-    host: '0.0.0.0', // default: localhost
+    host: "0.0.0.0", // default: localhost
     port: 1324,
     https: {
-      key: './https/localhost+3-key.pem',
-      cert: './https/localhost+3.pem'
-    }
+      key: "./https/localhost+3-key.pem",
+      cert: "./https/localhost+3.pem",
+    },
   },
-  "runtimeConfig": {
-    "token": '',
-    "public": {
-      "apiUrl": '',
-    }
-  }, 
-  "imports": {
-    "dirs": ['stores']
+  runtimeConfig: {
+    token: "",
+    public: {
+      apiUrl: "",
+    },
   },
-  "modules": [
-    '@nuxtjs/i18n',
-    '@nuxt/image',
+  imports: {
+    dirs: ["stores"],
+  },
+  modules: [
+    "@nuxtjs/i18n",
+    "@nuxt/image",
     [
-      '@pinia/nuxt',
+      "@pinia/nuxt",
       {
-        'autoImports': ['defineStore', 'acceptHMRUpdate'],
-      },
-    ]
-  ],
-  "i18n": {
-    "strategy": 'no_prefix',
-    "locales": [
-      {
-        "code": 'zh-TW',
-        "file": 'zh-TW.json'
-      },
-      {
-        "code": 'en-US',
-        "file": 'en-US.json'
-      },
-      {
-        "code": 'ja-JP',
-        "file": 'ja-JP.json'
+        autoImports: ["defineStore", "acceptHMRUpdate"],
       },
     ],
-    "langDir": 'language',
-    "defaultLocale": 'zh-TW',
-    "detectBrowserLanguage": {
-      "useCookie": true,
-    }
+  ],
+  i18n: {
+    strategy: "no_prefix",
+    locales: [
+      {
+        code: "zh-TW",
+        file: "zh-TW.json",
+      },
+      {
+        code: "en-US",
+        file: "en-US.json",
+      },
+      {
+        code: "ja-JP",
+        file: "ja-JP.json",
+      },
+    ],
+    langDir: "language",
+    defaultLocale: "zh-TW",
+    detectBrowserLanguage: {
+      useCookie: true,
+    },
   },
   image: {
-    dir: 'assets/images'
+    dir: "assets/images",
   },
   // 特定組件 auto import
   // "components": {
@@ -93,30 +93,30 @@ export default defineNuxtConfig({
   //   { path: '~/components/special-components', prefix: 'Special' },
   //   '~/components'
   // ],
-  css:["@/assets/scss/style.scss"],
+  css: ["@/assets/scss/style.scss"],
   vite: {
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: '@use "@/assets/scss/_var.scss" as *;'
-        }
-      }
+          additionalData: '@use "@/assets/scss/_var.scss" as *;',
+        },
+      },
     },
     plugins: [
       createSvgIconsPlugin({
-        iconDirs: [path.resolve(process.cwd(), 'assets/icons')], //所有 svg 都放這
-        symbolId: '[dir]/[name]',
-        customDomId: '__svg__icons__dom__',
+        iconDirs: [path.resolve(process.cwd(), "assets/icons")], //所有 svg 都放這
+        symbolId: "[dir]/[name]",
+        customDomId: "__svg__icons__dom__",
       }),
     ],
     server: {
       proxy: {
-        '/VsWeb/api': {
-          target: 'https://www.vscinemas.com.tw/',
+        "/VsWeb/api": {
+          target: "https://www.vscinemas.com.tw/",
           changeOrigin: true,
         },
       },
-    }, 
+    },
   },
   // plugins: [
   //   { src: "~/plugins/swiper.js", ssr: true },
@@ -126,17 +126,17 @@ export default defineNuxtConfig({
   // },
   app: {
     head: {
-      title: 'NUXT3-DEMO',
-      charset: 'utf-8',
-      viewport: 'width=device-width, initial-scale=1',
+      title: "NUXT3-DEMO",
+      charset: "utf-8",
+      viewport: "width=device-width, initial-scale=1",
       meta: [
-        { name: 'description', content: '全域 - meta tag 設定' },
-        { name: 'format-detection', content: 'telephone=no' },
+        { name: "description", content: "全域 - meta tag 設定" },
+        { name: "format-detection", content: "telephone=no" },
         { property: "og:title", content: "NUXT3-DEMO" },
         { property: "og:description", content: "全域 - meta tag 設定" },
       ],
       bodyAttrs: {
-        class: 'test'
+        class: "test",
       },
       link: [
         {
@@ -152,5 +152,5 @@ export default defineNuxtConfig({
       ],
     },
     // pageTransition: { name: 'page', mode: 'out-in' },
-  }
-})
+  },
+});

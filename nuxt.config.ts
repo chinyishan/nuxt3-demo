@@ -22,6 +22,9 @@ import path from "path";
 
 // export default defineNuxtConfig(config)
 
+const apiSecret = process.env.NUXT_API_SECRET;
+const apiBase = process.env.NUXT_PUBLIC_API_BASE;
+
 export default defineNuxtConfig({
   devtools: {
     enabled: true,
@@ -29,15 +32,15 @@ export default defineNuxtConfig({
   devServer: {
     host: "0.0.0.0", // default: localhost
     port: 1324,
-    https: {
-      key: "./https/localhost+3-key.pem",
-      cert: "./https/localhost+3.pem",
-    },
+    // https: {
+    //   key: "./https/localhost+3-key.pem",
+    //   cert: "./https/localhost+3.pem",
+    // },
   },
   runtimeConfig: {
-    token: "",
+    apiSecret,
     public: {
-      apiUrl: "",
+      apiBase,
     },
   },
   imports: {

@@ -46,15 +46,16 @@ const { $hello } = useNuxtApp();
 // 注入 plugins 的插件
 const selectedDate = ref(new Date());
 
-// 環境變數
+// 環境變數 .env URL測試
 const config = useRuntimeConfig();
 console.log(config);
-const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
-  headers: {
-    Authorization: `Bearer ${config.token}`,
-  },
-});
-console.log(data);
+console.log(process);
+// const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
+//   headers: {
+//     Authorization: `Bearer ${config.token}`,
+//   },
+// });
+// console.log(data);
 
 if (process.server) {
   console.log("server token:", config.token);

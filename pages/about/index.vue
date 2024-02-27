@@ -67,6 +67,12 @@ import axios from "axios";
 // );
 // console.log(data);
 
+// 單個
+const { data: organization } = await useFetch(
+  `https://api.github.com/orgs/nuxt`
+);
+console.log(organization.value); // null
+
 //多個 API 請求 useFetch + Promise
 const [{ data: orgsData }, { data: reposData }] = await Promise.all([
   useFetch(`https://api.github.com/orgs/nuxt`),

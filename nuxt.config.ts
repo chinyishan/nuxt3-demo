@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons";
-import path from "path";
+import { createSvgIconsPlugin } from "vite-plugin-svg-icons"; //svg
+import path from "path"; //svg
 
 // 把設定放在 config
 // const config = {
@@ -22,8 +22,8 @@ import path from "path";
 
 // export default defineNuxtConfig(config)
 
-const apiSecret = process.env.NUXT_API_SECRET;
-const apiBase = process.env.NUXT_PUBLIC_API_BASE;
+// const apiSecret = process.env.NUXT_API_SECRET;
+// const apiBase = process.env.NUXT_PUBLIC_API_BASE;
 
 export default defineNuxtConfig({
   devtools: {
@@ -38,11 +38,15 @@ export default defineNuxtConfig({
     // },
   },
   runtimeConfig: {
-    apiSecret,
+    apiSecret: '',
     public: {
-      apiBase,
+      apiBase: '',
     },
   },
+  // server/db 設置
+  "nitro": {
+    "plugins": ["~/server/db/index.js"],
+  }, 
   imports: {
     dirs: ["stores"],
   },

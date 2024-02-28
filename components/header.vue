@@ -15,6 +15,7 @@
             <li><NuxtLink to="/meta-head">MetaSEO</NuxtLink></li>
             <li><NuxtLink to="/courses">嵌套路由</NuxtLink></li>
             <li><NuxtLink to="/cors-api">跨域問題</NuxtLink></li>
+            <li><NuxtLink to="/mongoDB">mongoDB</NuxtLink></li>
             <li>
               <NuxtLink
                 :to="{

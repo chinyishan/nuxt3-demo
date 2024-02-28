@@ -618,8 +618,20 @@ if (process.server) {
 NUXT_TOKEN=1234567890
 NUXT_PUBLIC_API_URL=https://www.text.com.tw
 ```
+* .env 不同的測試環境，.env.develop，線上環境(CI/CD)有 ENV 的變數的話會自動寫入Nuxt Config。
+* 測試，useRuntimeConfig 可取得到在 config 設定的內容
+```
+const config = useRuntimeConfig()
+console.log(config.public)
+```
+* console.log(config)，config 出來的內容 
+```
+app 是 nuxt3 預設內容
+public 是定義好的，可在 client 端讀取到
+```
 
 ### vite 設置 .env
+* 不使用 runtimeConfig 帶入環境變數，直接使用 process.env 的方式，可以使用 vite 的設定來帶入 。
 * .env 會覆蓋 nuxt.config 設定的 runtimeConfig
 * nuxt.config.ts
 ```
@@ -635,9 +647,10 @@ WEB_URL=https://www.test.com
 ENV=local
 TOKEN=1234567890
 ```
-* page 測試
+* Vite 測試，process.env 取出
 ```
-const runtimeConfig = useRuntimeConfig()
+console.log("ENV=>", process.env.ENV);
+console.log("WEB_URL=>", process.env.WEB_URL);
 ```
 
 ## nuxt-swiper
@@ -718,3 +731,35 @@ devServer: {
  },
 ```
 
+## Nuxt3 Server 整合 MongoDB
+* MongoDB官網: https://www.mongodb.com/cloud/atlas/lp/try4
+* wW4oChPZQFcBAEip (不可刪)
+* 可以用這個服務查自己的IP: https://myip.com.tw/
+* 大部分家裡IP都是浮動的，所以每隔一段時間就要重新設定。連不上就要重設。
+* Mongoose 是一個用於在 MongoDB 和 Node.js 環境之間連接工具。 https://mongoosejs.com/
+```
+npm i mongoose
+```
+
+### server / api
+* api 資料夾是server預設功能，不是 api 的話，在 server 不會有任何作用就單純資料夾。
+* 可以透過在檔名加上 get、post、put、delete 來匹配 HTTP request methods。
+
+### 新增 server / db 設置
+* 管理連線資訊
+mongodb+srv://sunny:<password>@sunny-nuxt3.dy3nd8m.mongodb.net/<DB名稱>
+
+### nuxt.config 設定 Nitro
+* nuxt.config 將 db 連線資訊給塞入 nitro 裡面，當 nuxt 啟動時就會先執行連線。
+* Nuxt3 的 server engine 採用了 Nitro。
+* Nitro 基於 rollup 跟 h3 這兩個工具，是一個高效能與可移植性目標而建構的最輕量 HTTP 框架。
+
+```
+"nitro": {
+  "plugins": ["~/server/db/index.js"],
+}, 
+```
+
+### 定義 Schema 跟建立 model
+並不會知道資料格式有哪些，需定義規格，才可知道那些欄位可操作
+建立 model / people.model.js

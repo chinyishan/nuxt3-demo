@@ -33,7 +33,9 @@
     <VDatePicker v-model="selectedDate" />
     <br />
     <br />
-    <button @click="refresh">Authorization: Bearer undefined</button>
+    <button @click="refresh">測試環境URL</button>
+    <br />
+    <br />
   </div>
 </template>
 <script setup>
@@ -48,17 +50,20 @@ const selectedDate = ref(new Date());
 
 // 環境變數 .env URL測試
 const config = useRuntimeConfig();
-console.log(config);
-console.log(process);
-// const { data, refresh } = await useFetch(`${config.public.apiUrl}/api/banner`, {
-//   headers: {
-//     Authorization: `Bearer ${config.token}`,
-//   },
-// });
-// console.log(data);
+console.log(config.public);
+const { data, refresh } = await useFetch(
+  `${config.public.apiBase}/api/banner`,
+  {
+    headers: {
+      Authorization: `Bearer ${config.apiSecret}`,
+    },
+  }
+);
+console.log(data);
 
+// console.log(process);
 if (process.server) {
-  console.log("server token:", config.token);
+  console.log("server token:", config.apiSecret);
 }
 
 const handleMiddleware = async () => {

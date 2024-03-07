@@ -23,6 +23,8 @@
         />
       </div>
       <button class="create" @click="createPeople">新增</button>
+      <br />
+      <button class="remove_btn" @click="submit()">測試打API</button>
     </div>
 
     <div class="todo">
@@ -97,6 +99,11 @@ const updateData = async (item) => {
   }
 };
 
+const submit = async () => {
+  await refresh();
+  console.log("1111");
+};
+
 // POST
 // 因為要讓 API 回來之後才要執行後面動作，所以加上 async/await
 const createPeople = async () => {
@@ -107,7 +114,7 @@ const createPeople = async () => {
   });
   // 新增完再打一次data API
   await refresh();
-  alert('新增完成')
+  alert("新增完成");
   parse();
   // 清空欄位
   resetData();

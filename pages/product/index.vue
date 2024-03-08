@@ -2,6 +2,11 @@
   <NuxtLayout name="layout-name">
     <Banner />
     <h1>商品列表</h1>
+    <button @click="submit(1)">測試打API-1</button>
+    <button @click="submit(2)">測試打API-2</button>
+    <button @click="submit(3)">測試打API-3</button>
+    <hr />
+    {{ pdData }}
     <div class="shop_list">
       <div class="shop_col" v-for="item in data.products" :key="item.id">
         <NuxtLink :to="`/product/${item.id}`" class="pic">
@@ -23,7 +28,26 @@
 <script setup>
 // import axios from "axios";
 const { data } = await useFetch("https://dummyjson.com/products");
+console.log(data, "data");
 // console.log(data.value);
+
+const pdData = ref({});
+
+const submit = async (Id) => {
+  const { data } = await useFetch(`https://dummyjson.com/products/${Id}`, {
+    method: "GET",
+    headers: { AcceptLanguage: "zh_TW" },
+    query: { limit: "30" },
+    onResponse(res) {
+      return res._data;
+    },
+    onResponseError(err) {
+      console.log(err);
+    },
+  });
+  pdData.value = data.value;
+  console.log(pdData.value, "pdData.value");
+};
 
 definePageMeta({
   layout: "custom",

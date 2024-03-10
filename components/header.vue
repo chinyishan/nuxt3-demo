@@ -16,6 +16,7 @@
             <li><NuxtLink to="/courses">嵌套路由</NuxtLink></li>
             <li><NuxtLink to="/cors-api">跨域問題</NuxtLink></li>
             <li><NuxtLink to="/mongoDB">mongoDB</NuxtLink></li>
+            <li><NuxtLink to="/models">輪播模組</NuxtLink></li>
             <li>
               <NuxtLink
                 :to="{

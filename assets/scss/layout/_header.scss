@@ -23,6 +23,7 @@
 
       .nav-list {
         display: flex;
+        flex-wrap: nowrap;
 
         li {
           position: relative;

@@ -16,6 +16,10 @@
     align-items: center;
     z-index: 10;
 
+    .logo {
+      width: 5%;
+    }
+
     .wrap-nav {
       display: flex;
       justify-content: space-between;

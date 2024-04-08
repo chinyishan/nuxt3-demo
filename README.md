@@ -585,6 +585,7 @@ const route = useRoute();
 - 攔截 Router 的變化
 - middleware 指是網址切換時，中間攔截的處理階層
 - middleware 三種形式，**匿名、具名、全域**
+- Nuxt3 中的 middleware 可以在路由切換前執行，但它並不直接獲取到 Vue 的 data 或 props。
 
 ### 匿名 route middleware
 

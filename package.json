@@ -13,10 +13,12 @@
     "lang": "node GoogleSheetToJson.js"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.7",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/i18n": "8.0.0-beta.10",
     "@types/node": "^18",
+    "element-plus": "^2.5.3",
     "flat": "^5.0.2",
     "fs-extra": "^11.1.1",
     "nuxt": "^3.8.2",
@@ -27,10 +29,8 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",
-    "@popperjs/core": "npm:@sxzz/popperjs-es@^2.11.7",
     "axios": "^1.5.0",
     "dayjs": "^1.11.10",
-    "element-plus": "^2.7.0",
     "mongoose": "^8.2.0",
     "pinia": "^2.1.6",
     "swiper": "^8.4.7",

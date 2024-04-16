@@ -53,7 +53,6 @@ export default defineNuxtConfig({
   modules: [
     "@nuxtjs/i18n",
     "@nuxt/image",
-    "@element-plus/nuxt",
     [
       "@pinia/nuxt",
       {

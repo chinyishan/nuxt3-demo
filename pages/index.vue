@@ -4,21 +4,6 @@
     <el-button>element-plus</el-button>
     <br />
     <br />
-    <el-radio-group v-model="size" label="size control">
-      <el-radio-button value="large">large</el-radio-button>
-      <el-radio-button value="default">default</el-radio-button>
-      <el-radio-button value="small">small</el-radio-button>
-    </el-radio-group>
-    <br />
-    <br />
-    <el-date-picker
-      v-model="value1"
-      type="date"
-      placeholder="Pick a day"
-      :size="size"
-    />
-    <br />
-    <br />
     <!-- <SwiperBanner /> -->
     <!-- <SwiperProduct /> -->
     <button @click="handleMiddleware">get api test Middleware</button>
@@ -57,11 +42,16 @@
   </div>
 </template>
 <script setup>
+// import {
+//     ElButton
+// } from "element-plus";
 const { count, add } = useAddCount();
 const store = useHomeStore();
 
 // 注入 plugins 前面要加 $
 const { $hello } = useNuxtApp();
+
+const value1 = ref("");
 
 // 注入 plugins 的插件
 const selectedDate = ref(new Date());

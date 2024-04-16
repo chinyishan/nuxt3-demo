@@ -38,21 +38,22 @@ export default defineNuxtConfig({
     // },
   },
   runtimeConfig: {
-    apiSecret: '',
+    apiSecret: "",
     public: {
-      apiBase: '',
+      apiBase: "",
     },
   },
   // server/db 設置
-  "nitro": {
-    "plugins": ["~/server/db/index.js"],
-  }, 
+  nitro: {
+    plugins: ["~/server/db/index.js"],
+  },
   imports: {
     dirs: ["stores"],
   },
   modules: [
     "@nuxtjs/i18n",
     "@nuxt/image",
+    "@element-plus/nuxt",
     [
       "@pinia/nuxt",
       {

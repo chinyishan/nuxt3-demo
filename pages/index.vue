@@ -1,6 +1,24 @@
 <template>
   <div>
     <h1>首頁-Nuxt3</h1>
+    <el-button>element-plus</el-button>
+    <br />
+    <br />
+    <el-radio-group v-model="size" label="size control">
+      <el-radio-button value="large">large</el-radio-button>
+      <el-radio-button value="default">default</el-radio-button>
+      <el-radio-button value="small">small</el-radio-button>
+    </el-radio-group>
+    <br />
+    <br />
+    <el-date-picker
+      v-model="value1"
+      type="date"
+      placeholder="Pick a day"
+      :size="size"
+    />
+    <br />
+    <br />
     <!-- <SwiperBanner /> -->
     <!-- <SwiperProduct /> -->
     <button @click="handleMiddleware">get api test Middleware</button>

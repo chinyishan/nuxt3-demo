@@ -1,5 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import { createSvgIconsPlugin } from "vite-plugin-svg-icons"; //svg
+// import { createSvgIconsPlugin } from "vite-plugin-svg-icons"; //svg
 import path from "path"; //svg
 
 // 把設定放在 config
@@ -111,13 +111,13 @@ export default defineNuxtConfig({
         },
       },
     },
-    plugins: [
-      createSvgIconsPlugin({
-        iconDirs: [path.resolve(process.cwd(), "assets/icons")], //所有 svg 都放這
-        symbolId: "[dir]/[name]",
-        customDomId: "__svg__icons__dom__",
-      }),
-    ],
+    // plugins: [
+    //   createSvgIconsPlugin({
+    //     iconDirs: [path.resolve(process.cwd(), "assets/icons")], //所有 svg 都放這
+    //     symbolId: "[dir]/[name]",
+    //     customDomId: "__svg__icons__dom__",
+    //   }),
+    // ],
     server: {
       proxy: {
         "/VsWeb/api": {

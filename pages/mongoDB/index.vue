@@ -24,7 +24,9 @@
       </div>
       <button class="create" @click="createPeople">新增</button>
       <br />
-      <button class="remove_btn" @click="submit()">測試打API</button>
+      <button class="remove_btn" @click="submit()">
+        測試useFetch打API會不會重複請求
+      </button>
     </div>
 
     <div class="todo">

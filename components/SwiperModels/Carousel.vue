@@ -31,7 +31,7 @@ const props = defineProps({
     type: Object,
   },
 });
-console.log("props.modelData", props.modelData);
+// console.log("props.modelData", props.modelData);
 </script>
 <style lang="scss" scoped>
 // .swiper-container {

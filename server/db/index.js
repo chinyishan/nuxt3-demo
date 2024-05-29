@@ -8,6 +8,6 @@ export default async (_nitroApp) => {
     );
     console.log("連接 MongoDB"); //server 出現則連接成功
   } catch (e) {
-    console.error("Error MongoDB =>", e);
+    console.error("錯誤 MongoDB =>", e);
   }
 };

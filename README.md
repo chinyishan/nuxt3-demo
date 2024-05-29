@@ -935,6 +935,21 @@ npm i mongoose
 
 ## package.json
 
+移除
 "overrides": {
 "vue": "latest"
 },
+
+## ecosystem.config.cjs PM2 部屬
+
+module.exports = {
+apps: [
+{
+name: "nuxt3-demo",
+port: "4000",
+exec_mode: "cluster",
+instances: "max",
+script: "./.output/server/index.mjs",
+},
+],
+};

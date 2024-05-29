@@ -37,6 +37,10 @@ export default defineNuxtConfig({
     //   cert: "./https/localhost+3.pem",
     // },
   },
+  server: {
+    host: "localhost", // 或者 'localhost'
+    port: 4000,
+  },
   runtimeConfig: {
     apiSecret: "",
     public: {
@@ -46,7 +50,12 @@ export default defineNuxtConfig({
   // server/db 設置
   nitro: {
     plugins: ["~/server/db/index.js"],
+    // preset: "node-server", //指定伺服器的監聽位址和連接埠
   },
+  // prerender: {
+  //   routes: ["/user/1", "/user/2"],  // 指定路由進行預渲染
+  //   ignore: ["/dynamic"], // 忽略特定路由不進行預渲染
+  // },
   imports: {
     dirs: ["stores"],
   },

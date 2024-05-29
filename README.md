@@ -932,3 +932,9 @@ npm i mongoose
 
 並不會知道資料格式有哪些，需定義規格，才可知道那些欄位可操作
 建立 model / people.model.js
+
+## package.json
+
+"overrides": {
+"vue": "latest"
+},

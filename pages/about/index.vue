@@ -45,6 +45,7 @@
 
 <script setup>
 // import axios from "axios"
+import { hash } from "ohash";
 import { getNewsList, getProductsList } from "@/api/news";
 
 // const cookie = useCookie("lang");
@@ -52,7 +53,7 @@ import { getNewsList, getProductsList } from "@/api/news";
 
 // 使用 reactive 來保存頁面狀態
 const pagination = reactive({
-  limit: 5,
+  limit: [1, 5],
   skip: 1,
 });
 
@@ -105,7 +106,7 @@ const {
   pending,
   error,
   refresh: ProductsRefresh,
-} = await getProductsList(queryParams, { key: "product_list" });
+} = await getProductsList(queryParams, { key: hash("product_list") }); //對於使用了響應式参數的情况，需要手動設置 key
 
 // const BannerData = reactive("");
 

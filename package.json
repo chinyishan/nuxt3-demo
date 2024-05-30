@@ -11,18 +11,20 @@
     "lang": "node GoogleSheetToJson.js"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.9",
     "@nuxt/devtools": "latest",
     "@nuxt/image": "^1.1.0",
     "@nuxtjs/i18n": "8.0.0-beta.10",
     "@types/node": "^18",
+    "element-plus": "^2.7.3",
     "flat": "^5.0.2",
     "fs-extra": "^11.1.1",
     "nuxt": "^3.8.2",
-    "vue": "3.4.27",
     "sass": "^1.62.0",
     "sass-loader": "^13.2.2",
     "spreadsheet-to-json": "^2.0.0",
-    "vite-plugin-svg-icons": "^2.0.1"
+    "vite-plugin-svg-icons": "^2.0.1",
+    "vue": "3.4.27"
   },
   "dependencies": {
     "@pinia/nuxt": "^0.4.11",

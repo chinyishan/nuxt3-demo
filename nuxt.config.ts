@@ -59,10 +59,10 @@ export default defineNuxtConfig({
   imports: {
     dirs: ["stores"],
   },
-  // "@element-plus/nuxt",
   modules: [
     "@nuxtjs/i18n",
     "@nuxt/image",
+    "@element-plus/nuxt",
     [
       "@pinia/nuxt",
       {

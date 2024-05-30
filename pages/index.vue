@@ -1,7 +1,8 @@
 <template>
   <div>
     <h1>首頁-Nuxt3</h1>
-    <!-- <el-button>element-plus</el-button> -->
+    <el-button type="primary">element-plus</el-button>
+    <br />
     <p>0528調整</p>
     <br />
     <br />
@@ -19,19 +20,19 @@
     </NuxtErrorBoundary>
     <br />
     <br />
-    <h2 class="title">composables-點擊按鈕: {{ count }}</h2>
+    <h3>composables-點擊按鈕: {{ count }}</h3>
     <button @click="add">composables-Add</button>
     <br />
     <br />
-    <h2 class="title">store-點擊按鈕: {{ store.count }}</h2>
+    <h3>store-點擊按鈕: {{ store.count }}</h3>
     <button @click="store.add">store-Add</button>
     <br />
     <br />
-    <h2>{{ $hello("Sunny") }}</h2>
+    <h3>{{ $hello("Sunny") }}</h3>
     <br />
     <br />
-    <h2 v-timeformat="'Mon Dec 11 2023 23:28:38 GMT+0800 (GMT+08:00)'"></h2>
-    <h2 v-timeformat="'1702308518986'"></h2>
+    <h3 v-timeformat="'Mon Dec 11 2023 23:28:38 GMT+0800 (GMT+08:00)'"></h3>
+    <h3 v-timeformat="'1702308518986'"></h3>
     <br />
     <br />
     <VDatePicker v-model="selectedDate" />

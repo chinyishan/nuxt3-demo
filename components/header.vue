@@ -3,11 +3,12 @@
     <header class="header">
       <nav class="content-nav">
         <NuxtLink to="/" class="logo">
-          <img src="@/assets/images/nuxt-logo.png" alt="nuxt" />
+          首頁
+          <!-- <img src="@/assets/images/nuxt-logo.png" alt="nuxt" /> -->
         </NuxtLink>
         <div class="wrap-nav">
           <ul class="nav-list">
-            <li><NuxtLink to="/about">API測試</NuxtLink></li>
+            <li><NuxtLink to="/api-fetch">API測試</NuxtLink></li>
             <li><NuxtLink to="/product">產品專區</NuxtLink></li>
             <li>
               <NuxtLink :to="`/brand-product/brand`">牌品嵌套路由</NuxtLink>

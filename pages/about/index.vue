@@ -1,12 +1,38 @@
 <template>
   <div class="about">
     <h1>api 測試</h1>
-    <!-- <div>{{ data }}</div> -->
-    <button @click="productRefresh">productRefresh</button>
-    <!-- <p>{{ productData }}</p> -->
-    <input type="text" v-model="meta.limit" />
-    <input type="text" v-model="meta.page" />
-    <button @click="metaClick">測試</button>
+    <input type="text" v-model="listQuery.brandId" />
+    <input type="text" v-model="listQuery.category" />
+    <select name="sort" id="sort" v-model="listQuery.sort">
+      <option value=""></option>
+      <option value="type01">type01</option>
+      <option value="type02">type02</option>
+      <option value="type03">type03</option>
+    </select>
+    <br />
+    <br />
+    <input type="text" v-model="pagination.limit" />
+    <input type="text" v-model="pagination.skip" />
+    <br />
+    <br />
+    <!-- <button @click="metaClick">測試</button> -->
+    <button @click="pagination.skip--">Prev</button>
+    <button
+      v-for="item in paginateTotal"
+      :key="item.key"
+      @click="pageClick(item)"
+      type="button"
+    >
+      {{ item }}
+    </button>
+    <button @click="pagination.skip++">Next</button>
+    <br />
+    <br />
+    <button @click="ProductsRefresh">ProductsRefresh</button>
+    <br />
+    <br />
+    {{ queryParams }}
+    <br />
     <br />
     {{ productData }}
     <!-- {{ cookie }} -->
@@ -19,39 +45,67 @@
 
 <script setup>
 // import axios from "axios"
-import { getNewsList } from "@/api/news";
+import { getNewsList, getProductsList } from "@/api/news";
 
 // const cookie = useCookie("lang");
 // cookie.value = "en";
 
 // 使用 reactive 來保存頁面狀態
-const meta = reactive({
-  limit: 10,
-  page: 1,
+const pagination = reactive({
+  limit: 5,
+  skip: 1,
 });
 
-const queryParams = ref({});
+const listQuery = reactive({
+  brandId: null,
+  category: null,
+  sort: null,
+});
 
-const metaClick = async () => {
-  queryParams.value = {};
-  for (const key in meta) {
-    queryParams.value[key] = meta[key];
-  }
-  console.log(queryParams.value, "queryParams.value");
-  // setTimeout(() => {
-  //   productRefresh(); //不需要再填 productRefresh ，如果click觸發事件，值有改變就會再打一次API
-  // }, 2000);
-  // await refresh();
+// 总页数数组
+const paginateTotal = ref([1, 2, 3, 4, 5]);
+
+// 查询参数
+const queryParams = computed(() => {
+  const combinedParams = { ...listQuery, ...pagination };
+  return Object.fromEntries(
+    Object.entries(combinedParams).filter(
+      ([, value]) => value !== null && value !== ""
+    )
+  );
+});
+
+/* 
+{
+  limit: pagination.limit,
+  page: pagination.page,
+  brandId: listQuery.brandId,
+  category: listQuery.category,
+  sort: listQuery.sort,
+}
+
+*/
+
+// 页面点击处理函数
+const pageClick = (item) => {
+  pagination.skip = item;
 };
 
-const { data: productData, refresh: productRefresh } = await useFetch(
-  "https://dummyjson.com/products",
-  { query: queryParams }
-);
+// const { data: productData, refresh: productRefresh } = await useFetch(
+//   "https://dummyjson.com/products",
+//   { query: queryParams }
+// );
+
+// console.log(productData);
 
 // 獲取新聞列表數據
-const { data, pending, errorm, refresh } = await getNewsList();
-console.log(data, "data");
+// const { data, pending, error, refresh } = await getNewsList();
+const {
+  data: productData,
+  pending,
+  error,
+  refresh: ProductsRefresh,
+} = await getProductsList(queryParams, { key: "product_list" });
 
 // const BannerData = reactive("");
 

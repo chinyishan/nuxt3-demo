@@ -2,6 +2,7 @@
 
 const API = {
   NEWS: "/news",
+  PRODUCTS: "/products",
 };
 
 // NewsDetailModel 定義
@@ -49,4 +50,8 @@ import { useHttp } from "~/composables/useHttp";
  */
 export async function getNewsList(params, option) {
   return await useHttp.get(API.NEWS, params, { ...option });
+}
+
+export async function getProductsList(params, option) {
+  return await useHttp.get(API.PRODUCTS, params, { ...option });
 }

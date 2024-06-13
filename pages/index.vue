@@ -8,7 +8,7 @@
     <br />
     <!-- <SwiperBanner /> -->
     <!-- <SwiperProduct /> -->
-    <button @click="handleMiddleware">get api test Middleware</button>
+    <!-- <button @click="handleMiddleware">get api test Middleware</button>
     <br />
     <br />
     <NuxtErrorBoundary>
@@ -40,7 +40,7 @@
     <br />
     <button @click="refresh">測試環境URL</button>
     <br />
-    <br />
+    <br /> -->
   </div>
 </template>
 <script setup>

@@ -4,7 +4,10 @@
       <p>Loading</p>
     </NuxtLoadingIndicator>
     <!-- <p v-show="isLoading">Loading</p> -->
-    <Header />
+    <div class="box">
+      <div class="box-in"></div>
+    </div>
+    <!-- <Header /> -->
     <Banner />
     <NuxtPage />
   </div>
@@ -27,5 +30,16 @@ nuxtApp.hook("page:finish", () => {
 * {
   margin: 0;
   padding: 0;
+}
+.box {
+  padding: 2.5%;
+  /* width: 100%;
+  height: 100%; */
+}
+.box-in {
+  background-color: #e4ffe1;
+  /* width: auto; */
+  height: 300px;
+  box-shadow: 0px 0px 20px 0px #346d3a40;
 }
 </style>

@@ -44,8 +44,8 @@ body {
 
 @supports (padding: max(0px)) {
   body {
-    padding-top: constant(safe-area-inset-top); /* 适用于较旧版本的iOS */
-    padding-top: env(safe-area-inset-top);
+    // padding-top: constant(safe-area-inset-top); /* 适用于较旧版本的iOS */
+    // padding-top: env(safe-area-inset-top);
     padding-bottom: env(safe-area-inset-bottom);
     padding-left: env(safe-area-inset-left);
     padding-right: env(safe-area-inset-right);

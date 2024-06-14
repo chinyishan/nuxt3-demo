@@ -25,13 +25,14 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: #ffffff; /* 你的背景颜色 */
+  background-color: #ffffee;
 }
 
 // .app-container {

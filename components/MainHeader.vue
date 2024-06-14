@@ -1,14 +1,26 @@
 <template>
-  <div class="header-content">
-    <header class="header">
-      <nav class="content-nav">
-        <NuxtLink to="/" class="logo">
-          <!-- 首頁 -->
-          <img src="@/assets/images/nuxt-logo.png" alt="nuxt" />
-        </NuxtLink>
-        <div class="wrap-nav">
+  <div class="header-container">
+    <header class="header-content">
+      <nav class="header-nav">
+        <div class="nav-wrap">
           <ul class="nav-list">
-            <li><NuxtLink to="/api-fetch">API測試</NuxtLink></li>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="/">
+                <p class="nav-name">首頁</p>
+              </NuxtLink>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">API相關</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/api-related/fetch-package">
+                    <p class="nav-name">api封裝測試</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
             <!-- <li><NuxtLink to="/product">產品專區</NuxtLink></li>
             <li>
               <NuxtLink :to="`/brand-product/brand`">牌品嵌套路由</NuxtLink>

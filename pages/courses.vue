@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <h1>列表 courses</h1>
     <!-- <div class="list">
       <NuxtLink to="/courses/nuxt3">nuxt3</NuxtLink>

@@ -1,9 +1,24 @@
 <template>
-  <div>
-    <h1>首頁-Nuxt3</h1>
-    <el-button type="primary">element-plus</el-button>
+  <div class="app-container">
+    <h1 class="title">首頁</h1>
+    <div class="btn-primary">
+      <el-button type="primary">element-plus</el-button>
+    </div>
     <br />
-    <p>0528調整</p>
+    <br />
+    <div class="btn-warning">
+      <el-button type="warning">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-primary">
+      <el-button type="primary">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-warning">
+      <el-button type="warning">element-plus</el-button>
+    </div>
     <br />
     <br />
     <!-- <SwiperBanner /> -->
@@ -43,6 +58,7 @@
     <br /> -->
   </div>
 </template>
+
 <script setup>
 // import {
 //     ElButton
@@ -87,11 +103,19 @@ const handleMiddleware = async () => {
 //   }
 // })
 </script>
-<style>
+
+<style scoped lang="scss">
 .title {
   font-size: calc(20px + 0.5vw);
+  padding: 30px 10px;
 }
 p {
   font-size: calc(12px + 0.5vw);
+}
+.btn-primary {
+  text-align: left;
+}
+.btn-warning {
+  text-align: right;
 }
 </style>

@@ -19,6 +19,21 @@ select {
   text-transform: none;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #ffffff; /* 你的背景颜色 */
+}
+
 // .app-container {
 //   padding-top: constant(safe-area-inset-top);
 //   padding-right: constant(safe-area-inset-right);

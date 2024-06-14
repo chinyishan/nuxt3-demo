@@ -149,7 +149,10 @@ export default defineNuxtConfig({
       meta: [
         { name: "description", content: "全域 - meta tag 設定" },
         { name: "format-detection", content: "telephone=no" },
-        // { name: "viewport", content: "width=device-width, initial-scale=1.0, viewport-fit=cover" },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1.0, viewport-fit=cover",
+        },
         { property: "og:title", content: "NUXT3-DEMO" },
         { property: "og:description", content: "全域 - meta tag 設定" },
       ],

@@ -5,9 +5,9 @@
       :height="5"
       :throttle="0"
     ></NuxtLoadingIndicator>
-    <div class="box">
+    <!-- <div class="box">
       <div class="box-in"></div>
-    </div>
+    </div> -->
     <MainHeader />
     <NuxtPage />
   </div>

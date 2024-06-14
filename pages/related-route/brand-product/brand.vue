@@ -4,7 +4,7 @@
     <div class="brand-link">
       <NuxtLink
         :to="{
-          path: `/brand-product/brand/`,
+          path: `/related-route/brand-product/brand/`,
         }"
         >全部商品11</NuxtLink
       >
@@ -12,7 +12,7 @@
         v-for="item in store.resource.brands"
         :key="item.id"
         :to="{
-          path: `/brand-product/brand/${item.id}`,
+          path: `/related-route/brand-product/brand/${item.id}`,
         }"
         >{{ item.name }}</NuxtLink
       >

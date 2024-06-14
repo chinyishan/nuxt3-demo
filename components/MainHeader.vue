@@ -11,39 +11,125 @@
             </li>
             <li class="nav-item">
               <NuxtLink class="nav-route" to="">
-                <p class="nav-name">API相關</p>
+                <p class="nav-name">API</p>
               </NuxtLink>
               <ul class="nav-children-list">
                 <li class="nav-children-item">
-                  <NuxtLink class="nav-route" to="/api-related/fetch-package">
+                  <NuxtLink class="nav-route" to="/related-api/fetch-package">
                     <p class="nav-name">api封裝測試</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-api/mongo-db">
+                    <p class="nav-name">mongoDB</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-api/cors-api">
+                    <p class="nav-name">跨網域API處理</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-api/product">
+                    <p class="nav-name">產品頁</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-api/vote">
+                    <p class="nav-name">投票</p>
                   </NuxtLink>
                 </li>
               </ul>
             </li>
-            <!-- <li><NuxtLink to="/product">產品專區</NuxtLink></li>
-            <li>
-              <NuxtLink :to="`/brand-product/brand`">牌品嵌套路由</NuxtLink>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">模組</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-models/swiper">
+                    <p class="nav-name">Swiper</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-models/plugins-test">
+                    <p class="nav-name">插件</p>
+                  </NuxtLink>
+                </li>
+              </ul>
             </li>
-            <li><NuxtLink to="/lang">多國語系</NuxtLink></li>
-            <li><NuxtLink to="/vote">投票列表</NuxtLink></li>
-            <li><NuxtLink to="/picture">圖片測試</NuxtLink></li>
-            <li><NuxtLink to="/meta-head">MetaSEO</NuxtLink></li>
-            <li><NuxtLink to="/courses">嵌套路由</NuxtLink></li>
-            <li><NuxtLink to="/cors-api">跨域問題</NuxtLink></li>
-            <li><NuxtLink to="/mongoDB">mongoDB</NuxtLink></li>
-            <li><NuxtLink to="/models">輪播模組</NuxtLink></li> -->
-            <!-- <li>
-              <NuxtLink
-                :to="{
-                  path: '/detail-composables',
-                  query: {
-                    id: '11111',
-                  },
-                }"
-                >Composables</NuxtLink
-              >
-            </li> -->
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">路由</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-route/courses">
+                    <p class="nav-name">Courses</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink
+                    class="nav-route"
+                    to="/related-route/brand-product/brand"
+                  >
+                    <p class="nav-name">Brand Products</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink
+                    class="nav-route"
+                    to="'/related-route/users-test/15'"
+                  >
+                    <p class="nav-name">Users Group</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">nuxt</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink
+                    class="nav-route"
+                    to="/related-nuxt/Composables-detaild"
+                  >
+                    <p class="nav-name">Composables介紹</p>
+                  </NuxtLink>
+                </li>
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-nuxt/meta-head">
+                    <p class="nav-name">MetaHead設置</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">多國語系</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-lang/lang">
+                    <p class="nav-name">語系切換</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <NuxtLink class="nav-route" to="">
+                <p class="nav-name">圖片</p>
+              </NuxtLink>
+              <ul class="nav-children-list">
+                <li class="nav-children-item">
+                  <NuxtLink class="nav-route" to="/related-picture/img-svg">
+                    <p class="nav-name">img失效問題</p>
+                  </NuxtLink>
+                </li>
+              </ul>
+            </li>
           </ul>
         </div>
       </nav>

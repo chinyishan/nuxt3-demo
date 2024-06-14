@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="app-container">
     <h1>Img 動態綁定路由</h1>
     <hr />
     <h2>NuxtImg</h2>

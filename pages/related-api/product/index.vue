@@ -9,7 +9,7 @@
     {{ pdData }}
     <div class="shop_list">
       <div class="shop_col" v-for="item in data.products" :key="item.id">
-        <NuxtLink :to="`/product/${item.id}`" class="pic">
+        <NuxtLink :to="`/api-related/product/${item.id}`" class="pic">
           <img :src="item.thumbnail" alt="pd" />
         </NuxtLink>
         <h3 class="title">{{ item.title }}</h3>

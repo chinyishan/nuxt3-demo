@@ -21,6 +21,36 @@
     </div>
     <br />
     <br />
+    <div class="btn-primary">
+      <el-button type="primary">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-warning">
+      <el-button type="warning">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-primary">
+      <el-button type="primary">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-warning">
+      <el-button type="warning">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-primary">
+      <el-button type="primary">element-plus</el-button>
+    </div>
+    <br />
+    <br />
+    <div class="btn-warning">
+      <el-button type="warning">element-plus</el-button>
+    </div>
+    <br />
+    <br />
     <!-- <SwiperBanner /> -->
     <!-- <SwiperProduct /> -->
     <!-- <button @click="handleMiddleware">get api test Middleware</button>

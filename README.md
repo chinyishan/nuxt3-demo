@@ -15,12 +15,30 @@ npx nuxi@latest init <project-name>
 ```
 
 ## 使用技術
-- Nuxt 3：前端框架，負責頁面路由與伺服器渲染管理
-- Pinia：狀態管理工具
-- Element Plus：UI 元件庫，快速建構頁面元件
-- Swiper.js：輪播圖與滑動效果實作
-- SCSS：樣式管理與版面排版
-- Vercel：網站部署與持續更新平台
+
+### 前端開發
+
+- Nuxt 3：頁面管理與伺服器渲染
+- Vue 3 (Composition API)：元件設計模式
+- SCSS：樣式管理與響應式設計
+- Pinia：狀態管理
+- Element Plus：UI 元件庫
+- Swiper.js：輪播與內容展示
+- v-calendar：自訂化日曆元件應用
+- Vue I18n：多國語系處理
+
+### 後端整合
+
+- MongoDB：資料庫儲存與資料讀取
+- GoogleSheetToJson.js：將 Google Sheet 資料轉換為 JSON 供前端使用
+
+### 安全防護
+
+- XSS：使用 XSS 過濾工具處理輸入資料，避免跨站腳本攻擊
+
+### 部署平台
+
+- Vercel：網站部署與持續更新
 
 ## 目錄配置
 

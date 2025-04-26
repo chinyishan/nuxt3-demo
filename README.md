@@ -8,13 +8,19 @@
 
 <a href="https://nuxt3-demo-gamma.vercel.app" target="_blank">網站連結</a>
 
-![nuxt3-pic](https://github.com/user-attachments/assets/dad017d7-ef1f-43a2-ae3b-3a459ac823b4)
-
 ## 安裝 Nuxt3
 
 ```
 npx nuxi@latest init <project-name>
 ```
+
+## 使用技術
+- Nuxt 3：前端框架，負責頁面路由與伺服器渲染管理
+- Pinia：狀態管理工具
+- Element Plus：UI 元件庫，快速建構頁面元件
+- Swiper.js：輪播圖與滑動效果實作
+- SCSS：樣式管理與版面排版
+- Vercel：網站部署與持續更新平台
 
 ## 目錄配置
 

@@ -40,6 +40,28 @@ npx nuxi@latest init <project-name>
 
 - Vercel：網站部署與持續更新
 
+## 資料夾配置
+
+```
+pages/           # 頁面路由，對應 URL 自動生成
+components/      # 可重用的 Vue 元件
+layouts/         # 頁面版型設定，如共用 Header/Footer
+composables/     # 自訂 hooks（如 useXXX）封裝邏輯
+stores/          # Pinia 狀態管理目錄
+assets/          # 樣式、圖片、靜態資源（不會被公開）
+public/          # 公開靜態檔案（直接對外，例如 favicon、robots.txt）
+plugins/         # Nuxt 插件設定（如 v-calendar、i18n）
+utils/           # 公用工具函式（如格式化、資料處理）
+api/             # 定義前端呼叫的 API 介面邏輯
+google/          # GoogleSheet 相關工具與資料處理（如轉 JSON）
+https/           # 封裝 axios 請求邏輯（API 客戶端）
+language/        # 多國語系設定與語系資源
+lib/             # 共用函式庫（可重用邏輯模組）
+server/          # Nuxt server 端 API、serverMiddleware、資料處理
+middleware/      # 路由中介層邏輯（如驗證登入、權限控制）
+types/           # TypeScript 型別定義（介面、型別）
+```
+
 ## 目錄配置
 
 ### assets

@@ -1,5 +1,15 @@
 # Nuxt3 Demo
 
+## 專案簡介
+
+本專案為個人練習與記錄用網站，主要目的是熟悉 Nuxt 3 的基礎架構、開發流程與元件設計模式。內容包含 Nuxt 3 的實作練習，以及前端技術筆記的整理與展示。透過此專案，強化對 Nuxt 3 核心概念的理解與實務應用。
+
+## Demo
+
+<a href="https://nuxt3-demo-gamma.vercel.app" target="_blank">網站連結</a>
+
+![nuxt3-pic](https://github.com/user-attachments/assets/dad017d7-ef1f-43a2-ae3b-3a459ac823b4)
+
 ## 安裝 Nuxt3
 
 ```
